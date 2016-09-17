@@ -19,7 +19,10 @@ values."
    dotspacemacs-configuration-layers
    '(auto-completion
      better-defaults
+     erc
      emacs-lisp
+     java
+     html
      clojure
      scheme
      git
@@ -237,12 +240,11 @@ are unsure, you should try in setting them in
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
-  ;; for java mode
-  ;; (setq
-  ;;  eclim-eclipse-dirs
-  ;;  "/Users/mjhamrick/Downloads/Eclipse.app/Contents/Eclipse"
-  ;;  eclim-executable
-  ;;  "/Users/mjhamrick/Downloads/Eclipse.app/Contents/Eclipse/eclim")
+  (setq
+   eclim-eclipse-dirs
+   "/Users/mjhamrick/Eclipse.app/Contents/Eclipse"
+   eclim-executable
+   "/Users/mjhamrick/Eclipse.app/Contents/Eclipse/eclim")
 
   (global-hungry-delete-mode 1)
   (paredit-mode 1)
@@ -259,6 +261,10 @@ layers configuration. You are free to put any user code."
 
   (setq org-agenda-files '("~/.org"))
 
+  (setq create-lockfiles nil)
+
+
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -268,11 +274,12 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cider-lein-command "lein")
+ '(cider-lein-parameters "with-profiles +test repl :headless")
  '(evil-move-beyond-eol t)
  '(geiser-active-implementations (quote (chicken)))
  '(geiser-default-implementation (quote chicken))
- '(geiser-mode-start-repl-p t)
- )
+ '(geiser-mode-start-repl-p t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
