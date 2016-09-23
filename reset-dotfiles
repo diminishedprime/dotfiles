@@ -9,3 +9,8 @@ rm ~/.zshrc
 # Add zsh stuff
 ln -s ~/programming/dotfiles/.zshenv ~/.zshenv
 ln -s ~/programming/dotfiles/.zshrc ~/.zshrc
+
+# Remove lein stuff
+rm ~/.lein/profiles.clj
+# Add lein stuff
+ln -s ~/programming/dotfiles/profiles.clj ~/.lein/profiles.clj

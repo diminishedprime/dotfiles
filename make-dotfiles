@@ -4,3 +4,6 @@ ln -s ~/programming/dotfiles/.spacemacs ~/.spacemacs
 # zsh stuff
 ln -s ~/programming/dotfiles/.zshenv ~/.zshenv
 ln -s ~/programming/dotfiles/.zshrc ~/.zshrc
+
+# Add Lein stuff
+n -s ~/programming/dotfiles/profiles.clj ~/.lein/profiles.clj
