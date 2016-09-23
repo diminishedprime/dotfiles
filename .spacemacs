@@ -24,6 +24,7 @@ values."
      java
      html
      clojure
+     ruby
      scheme
      git
      haskell
@@ -263,8 +264,11 @@ layers configuration. You are free to put any user code."
 
   (setq create-lockfiles nil)
 
+  (find-file "~/.org/index.org")
 
-
+  (setq cider-lein-command "lein")
+  (setq cider-lein-parameters "with-profiles +test repl :headless")
+  (setq evil-move-beyond-eol t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -274,12 +278,7 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cider-lein-command "lein")
- '(cider-lein-parameters "with-profiles +test repl :headless")
- '(evil-move-beyond-eol t)
- '(geiser-active-implementations (quote (chicken)))
- '(geiser-default-implementation (quote chicken))
- '(geiser-mode-start-repl-p t))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
