@@ -252,6 +252,10 @@ layers configuration. You are free to put any user code."
    eclim-executable
    "/Users/mjhamrick/Eclipse.app/Contents/Eclipse/eclim")
 
+  ;; Needed for gpg to work on my mac
+  (add-to-list 'exec-path "/usr/local/bin")
+  (setq epg-gpg-program "/usr/local/bin/gpg1")
+
   (global-hungry-delete-mode 1)
   (paredit-mode 1)
   (aggressive-indent-global-mode 1)
