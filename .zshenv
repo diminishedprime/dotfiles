@@ -2,3 +2,5 @@ export PATH="//anaconda/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export PATH=~/.local/bin:$PATH
+
+export PATH=/usr/local/Cellar/:$PATH
