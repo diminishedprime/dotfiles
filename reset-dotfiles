@@ -1,16 +1,16 @@
 # Remove Spacemacs Stuff
 rm ~/.spacemacs
 # Add Spacemacs
-ln -s ~/programming/dotfiles/.spacemacs ~/.spacemacs
+ln -sf ~/dotfiles/.spacemacs ~/.spacemacs
 
 # Remove zsh stuff
 rm ~/.zshenv
 rm ~/.zshrc
 # Add zsh stuff
-ln -s ~/programming/dotfiles/.zshenv ~/.zshenv
-ln -s ~/programming/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.zshenv ~/.zshenv
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
 # Remove lein stuff
 rm ~/.lein/profiles.clj
 # Add lein stuff
-ln -s ~/programming/dotfiles/profiles.clj ~/.lein/profiles.clj
+ln -sf ~/dotfiles/profiles.clj ~/.lein/profiles.clj
