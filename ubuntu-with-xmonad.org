@@ -4,6 +4,8 @@
       present. So LEADER-2 would open emacs, and LEADER-3 would open a terminal,
       etc.
     + [ ] do something about a nice wallpaper
+    + [ ] learn how to make a window vertically taller or shorter like LEADER-h
+      or LEADER-l, but vertical.
 
 * Setting up Ubuntu 16 with Xmonad for great profit
 ** Installing Needed Software
