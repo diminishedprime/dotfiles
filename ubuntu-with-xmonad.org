@@ -1,0 +1,70 @@
+* TODO
+  + [ ] configure xmonad to be more fancy
+    + [ ] automatically open app when switching to workspace if no programs are
+      present. So LEADER-2 would open emacs, and LEADER-3 would open a terminal,
+      etc.
+    + [ ] do something about a nice wallpaper
+
+* Setting up Ubuntu 16 with Xmonad for great profit
+** Installing Needed Software
+   + [ ] konsole (no reason other than I like how easy it is to modify)
+     #+BEGIN_SRC sh
+       sudo apt-get update
+       sudo apt-get install konsole
+     #+END_SRC
+   + [ ] git
+     #+BEGIN_SRC sh
+       sudo apt-get update
+       sudo apt-get install git
+       git config --global user.email "matthewjhamrick@gmail.com"
+       git config --global user.name "Matthew Hamrick"
+     #+END_SRC
+   + [ ] zsh
+     #+BEGIN_SRC sh
+       sudo apt-get update
+       sudo apt-get install zsh
+     #+END_SRC
+   + [ ] emacs25
+     #+BEGIN_SRC  sh
+       sudo add-apt-repository ppa:kelleyk/emacs
+       sudo apt-get update
+       sudo apt-get install emacs25
+     #+END_SRC
+   + [ ] xmonad
+     #+BEGIN_SRC sh
+       sudo apt-get update
+       sudo apt-get install xmonad suckless-tools
+     #+END_SRC
+   + [ ] xcape (needed for some of the voodoo bindings)
+     #+BEGIN_SRC sh
+       sudo apt-get update
+       sudo apt-get install git gcc make pkg-config libx11-dev libxtst-dev libxi-dev
+       git clone https://github.com/diminishedprime/xcape.git ~/temp/xcape
+       cd ~/temp/xcape
+       make
+       sudo make install
+       cd -
+     #+END_SRC
+** Setting up config files
+   + [ ] Setting up ssh key (for github and other things)
+     #+BEGIN_SRC sh
+       ssh-keygen -t rsa -b 4096 -C "matthewjhamrick@gmail.com"
+       cat ~/.ssh/id_rsa.pub
+     #+END_SRC
+   + [ ] dotfiles
+     #+BEGIN_SRC sh
+       git clone https://github.com/diminishedprime/dotfiles.git ~/dotfiles
+       cd ~/dotfiles
+       ./install.sh
+       cd -
+     #+END_SRC
+   + [ ] oh-my-zsh
+     #+BEGIN_SRC sh
+       cd ~/dotfiles
+       ./get_oh_my_zsh.sh
+       cd -
+     #+END_SRC
+   + [ ] add command to ~/.profile
+     #+BEGIN_SRC sh
+       ~/dotfiles/set_up_hyper_modifiers.sh
+     #+END_SRC
