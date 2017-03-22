@@ -39,6 +39,10 @@ then
     sudo git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
     sudo fc-cache -f -v
 
+    # Spacemacs
+    git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/
+    ln -sf ~/dotfiles/.spacemacs ~/.spacemacs
+
 fi
 
 if [ "$PLATFORM" == "darwin" ]
