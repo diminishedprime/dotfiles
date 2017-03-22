@@ -21,6 +21,8 @@ then
     cd ~/temp/xcape
     make
     sudo make install
+    # Script for keybindings
+    echo "~/programming/dotfiles/set_up_hyper_modifiers.sh" >> ~/.profile
 
     # oh-my-zsh
     ## oh-my-zsh is a nice default configuration for zsh that adds some
