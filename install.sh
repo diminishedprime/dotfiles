@@ -38,5 +38,3 @@ if [ "$PLATFORM" == "darwin" ]
 then
     echo "This is running darwin"
 fi
-
-echo "Running the installation sequence common to darwin and ubuntu"
