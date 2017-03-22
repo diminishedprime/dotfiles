@@ -80,6 +80,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias e='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias ghci='stack ghci'

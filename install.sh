@@ -28,6 +28,7 @@ then
     ## oh-my-zsh is a nice default configuration for zsh that adds some
     ## features.
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    ln -sf ~/programming/dotfiles/.zshrc ~/.zshrc
 
     # dotfiles
     ## I go ahead and close this repo since many of my config files are stored
@@ -41,7 +42,7 @@ then
 
     # Spacemacs
     git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/
-    ln -sf ~/dotfiles/.spacemacs ~/.spacemacs
+    ln -sf ~/programming/dotfiles/.spacemacs ~/.spacemacs
 
 fi
 
