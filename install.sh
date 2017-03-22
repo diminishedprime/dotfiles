@@ -9,7 +9,7 @@ if [ "$PLATFORM" == "ubuntu" ]
 then
     echo "Running the Ubuntu installation sequence"
 
-    sudo add-apt-repository ppa:kelleyk/emacs
+    sudo add-apt-repository ppa:kelleyk/emacs -y
     sudo apt-get update
     sudo apt-get install git zsh emacs25 gcc make pkg-config libx11-dev libxtst-dev libxi-dev
 
