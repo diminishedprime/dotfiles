@@ -40,7 +40,7 @@ then
 
     # Xmonad
     git clone https://github.com/davidbrewer/xmonad-ubuntu-conf.git ~/temp/xmonad-ubuntu-conf
-    ~/temp/xmonad-ubuntu-conf/install.sh
+    ~/temp/xmonad-ubuntu-conf/install-xmonad
 
 
     # oh-my-zsh
