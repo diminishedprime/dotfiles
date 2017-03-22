@@ -11,7 +11,7 @@ then
 
     sudo add-apt-repository ppa:kelleyk/emacs -y
     sudo apt-get update
-    sudo apt-get install git zsh emacs25 gcc make pkg-config libx11-dev libxtst-dev libxi-dev
+    sudo apt-get install git zsh emacs25 gcc make pkg-config libx11-dev libxtst-dev libxi-dev -y
 
     # xcape
     ## I use xcape in conjunction with a simple script to make it where I can
@@ -33,6 +33,11 @@ then
     ## I go ahead and close this repo since many of my config files are stored
     ## here. This allows me to symlink all the files I care about.
     git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/
+
+    # Source Code Pro
+    [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
+    sudo git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
+    sudo fc-cache -f -v
 
 fi
 
