@@ -44,6 +44,9 @@ then
     git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/
     ln -sf ~/programming/dotfiles/.spacemacs ~/.spacemacs
 
+    # Xmonad
+    git clone https://github.com/davidbrewer/xmonad-ubuntu-conf.git
+
 fi
 
 if [ "$PLATFORM" == "darwin" ]
