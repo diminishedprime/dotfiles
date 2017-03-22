@@ -24,12 +24,6 @@ then
     # Script for keybindings
     echo "~/programming/dotfiles/set_up_hyper_modifiers.sh" >> ~/.profile
 
-    # oh-my-zsh
-    ## oh-my-zsh is a nice default configuration for zsh that adds some
-    ## features.
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-    ln -sf ~/programming/dotfiles/.zshrc ~/.zshrc
-
     # dotfiles
     ## I go ahead and close this repo since many of my config files are stored
     ## here. This allows me to symlink all the files I care about.
@@ -46,6 +40,12 @@ then
 
     # Xmonad
     git clone https://github.com/davidbrewer/xmonad-ubuntu-conf.git
+
+    # oh-my-zsh
+    ## oh-my-zsh is a nice default configuration for zsh that adds some
+    ## features.
+    ln -sf ~/programming/dotfiles/.zshrc ~/.zshrc
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 fi
 
