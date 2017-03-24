@@ -39,9 +39,8 @@ then
     ln -sf ~/programming/dotfiles/.spacemacs ~/.spacemacs
 
     # Xmonad
-    git clone https://github.com/davidbrewer/xmonad-ubuntu-conf.git ~/.xmonad
+    git clone https://github.com/diminishedprime/xmonad-ubuntu-conf.git ~/.xmonad
     ~/.xmonad/install-xmonad
-
 
     # oh-my-zsh
     ## oh-my-zsh is a nice default configuration for zsh that adds some
