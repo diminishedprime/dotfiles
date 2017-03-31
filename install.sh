@@ -2,24 +2,18 @@
 
 echo "Running the Ubuntu installation sequence"
 
+sudo apt-get install git -y
+
 ~/programming/dotfiles/installs/install_emacs.sh
 
 ~/programming/dotfiles/installs/install_docker.sh
 
-sudo apt-get install git
+~/programming/dotfiles/installs/install_xcape.sh
 
-sudo apt-get install zsh
+sudo apt-get install zsh -y
 
 # sudo apt-get install gcc make pkg-config libx11-dev libxtst-dev libxi-dev -y
 
-# # xcape
-# ## I use xcape in conjunction with a simple script to make it where I can
-# ## use \ and tab as the hyper modifier if held down, and work normally if
-# ## quickly tapped.
-# git clone https://github.com/diminishedprime/xcape.git ~/temp/xcape
-# cd ~/temp/xcape
-# make
-# sudo make install
 # # Script for keybindings
 # echo "~/programming/dotfiles/set_up_hyper_modifiers.sh" >> ~/.profile
 

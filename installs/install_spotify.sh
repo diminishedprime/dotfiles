@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Here you can find a build of Spotify for Linux. We are running this ourselves
 # and we will try to make sure it keeps pace with its Mac and Windows siblings.
 # However, this version is unsupported. You can tell us what you think and ask

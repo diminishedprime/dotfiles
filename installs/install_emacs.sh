@@ -1,4 +1,4 @@
-#!/bin/bashn
+#!/bin/bash
 
 echo "Installing emacs25 from ppa"
 sudo add-apt-repository ppa:kelleyk/emacs -y
