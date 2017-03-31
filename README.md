@@ -12,8 +12,8 @@ chmod +x ~/temp/install.sh && \
 ```sh
 mkdir -p ~/temp/
 apt-get update && \
-apt-get install software-properties-common sudo python python-software-properties wget -y && \
-wget https://raw.githubusercontent.com/diminishedprime/dotfiles/master/install.sh -O ~/temp/install.sh && \
+apt-get install sudo wget -y && \
+wget https://raw.githubusercontent.com/diminishedprime/dotfiles/cleaner-install/install.sh  -O ~/temp/install.sh && \
 chmod +x ~/temp/install.sh && \
 ~/temp/install.sh
 ```
