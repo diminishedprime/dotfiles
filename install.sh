@@ -2,7 +2,9 @@
 
 echo "Running the Ubuntu installation sequence"
 
+echo "Bootstraping the installer directory"
 sudo apt-get install git -y
+git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/
 
 ~/programming/dotfiles/installs/install_emacs.sh
 
@@ -20,7 +22,7 @@ sudo apt-get install zsh -y
 # # dotfiles
 # ## I go ahead and close this repo since many of my config files are stored
 # ## here. This allows me to symlink all the files I care about.
-# git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/
+#
 
 # # Source Code Pro
 # [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
