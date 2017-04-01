@@ -17,11 +17,9 @@ git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/p
 
 ~/programming/dotfiles/installs/install_spacemacs.sh
 
-sudo apt-get install zsh -y > /dev/null
+~/programming/dotfiles/installs/install_xmonad.sh
 
-# # Xmonad
-# git clone https://github.com/diminishedprime/xmonad-ubuntu-conf.git ~/.xmonad
-# ~/.xmonad/install-xmonad
+sudo apt-get install zsh -y > /dev/null
 
 # # oh-my-zsh
 # ## oh-my-zsh is a nice default configuration for zsh that adds some
