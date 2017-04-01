@@ -11,8 +11,8 @@ chmod +x ~/temp/install.sh && \
 ### Docker
 ```sh
 mkdir -p ~/temp/
-apt-get update && \
-apt-get install sudo wget -y && \
+apt-get update > /dev/null && \
+apt-get install sudo wget -y > /dev/null && \
 wget https://raw.githubusercontent.com/diminishedprime/dotfiles/cleaner-install/install.sh  -O ~/temp/install.sh && \
 chmod +x ~/temp/install.sh && \
 ~/temp/install.sh
