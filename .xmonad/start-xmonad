@@ -110,5 +110,7 @@ synclient MaxTapTime=0
 
 ~/programming/dotfiles/scripts/set_up_hyper_modifiers.sh
 
+sudo powertop --auto-tune
+
 # Now, finally, start xmonad
 exec xmonad

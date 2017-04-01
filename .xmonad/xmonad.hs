@@ -316,7 +316,9 @@ myKeyBindings = [((myModMask, xK_b), sendMessage ToggleStruts)
                 , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
                 , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
                 , ((0, 0x1008FF03), spawn "xbacklight -10")
+                , ((myModMask, 0x1008FF03), spawn "xbacklight -1")
                 , ((0, 0x1008FF02), spawn "xbacklight +10")
+                , ((myModMask, 0x1008FF02), spawn "xbacklight +1")
                 ]
 
 
