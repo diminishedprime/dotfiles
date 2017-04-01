@@ -26,4 +26,5 @@ if [ -z "$(pgrep synapse)" ] ; then
     synapse -s &
 fi
 
+# Set the default backlight setting to 30%
 xbacklight -set 30
