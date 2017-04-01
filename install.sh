@@ -13,14 +13,9 @@ git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/p
 
 ~/programming/dotfiles/installs/install_xcape.sh
 
+~/programming/dotfiles/installs/install_source_code_pro.sh
+
 sudo apt-get install zsh -y > /dev/null
-
-# sudo apt-get install gcc make pkg-config libx11-dev libxtst-dev libxi-dev -y
-
-# # Source Code Pro
-# [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
-# sudo git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
-# sudo fc-cache -f -v
 
 # # Spacemacs
 # git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/
