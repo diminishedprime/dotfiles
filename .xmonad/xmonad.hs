@@ -411,7 +411,7 @@ myKeys = myKeyBindings
 
 main :: IO ()
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
+  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
   xmonad
     $ dynamicProjects projects
     $ withUrgencyHook NoUrgencyHook $ def
