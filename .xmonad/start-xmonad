@@ -49,14 +49,6 @@ xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS
 
 
 #
-# LOAD SCREEN BACKGROUNDS
-#
-
-# To set your backgrounds, run nitrogren /path/to/images
-nitrogen --restore &
-
-
-#
 # STARTUP ICON TRAY
 #
 

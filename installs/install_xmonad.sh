@@ -21,7 +21,19 @@ echo "installing xmonad"
 # Author: David Brewer
 
 echo "Installing required packages..."
-sudo apt-get install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev xmobar xcompmgr nitrogen stalonetray moreutils consolekit synapse ssh-askpass-gnome thunar chromium-browser -y
+sudo apt-get install \
+     xmonad \
+     libghc-xmonad-dev \
+     libghc-xmonad-contrib-dev \
+     xmobar \
+     xcompmgr \
+     stalonetray \
+     moreutils \
+     consolekit \
+     synapse \
+     ssh-askpass-gnome \
+     thunar \
+     chromium-browser -y
 
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
