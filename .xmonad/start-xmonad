@@ -103,7 +103,7 @@ setxkbmap -option 'ctrl:nocaps'
 
 xset r rate 200 40
 
-~/programming/dotfiles/set_up_hyper_modifiers_2.sh
+~/programming/dotfiles/scripts/set_up_hyper_modifiers.sh
 
 # Now, finally, start xmonad
 exec xmonad

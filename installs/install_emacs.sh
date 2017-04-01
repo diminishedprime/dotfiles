@@ -8,6 +8,6 @@ sudo apt-get install emacs25 -y > /dev/null
 
 # Spacemacs
 git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/ > /dev/null
-ln -sf ~/programming/dotfiles/.spacemacs ~/.spacemacs
+ln -sf ~/programming/dotfiles/emacs/.spacemacs ~/.spacemacs
 
 emacs --daemon > /dev/null &

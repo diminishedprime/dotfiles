@@ -37,6 +37,7 @@ echo "Linking to customized gnome 2 configuration..."
 mv ~/.gtkrc-2.0 ~/.gtkrc-2.0.original
 cp ~/programming/dotfiles/.xmonad/.gtkrc-2.0 ~/
 
+mkdir -p ~/.xmonad
 ln -sf ~/programming/dotfiles/.xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -sf ~/programming/dotfiles/.xmonad/start-xmonad ~/.xmonad/start-xmonad
 ln -sf ~/programming/dotfiles/.xmonad/startup-hook ~/.xmonad/startup-hook
