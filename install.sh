@@ -15,8 +15,6 @@ git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/p
 
 ~/programming/dotfiles/installs/install_source_code_pro.sh
 
-~/programming/dotfiles/installs/install_spacemacs.sh
-
 ~/programming/dotfiles/installs/install_xmonad.sh
 
 sudo apt-get install zsh -y > /dev/null
