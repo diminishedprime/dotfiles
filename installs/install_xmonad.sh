@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+
+echo "installing xmonad"
+
 # Installation script which setup up an Ubuntu Xenial machine to use this xmonad
 # configuration.
 #
