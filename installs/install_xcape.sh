@@ -8,5 +8,5 @@ echo "Install xcape"
 ## tapped.
 git clone https://github.com/diminishedprime/xcape.git ~/temp/xcape
 cd ~/temp/xcape
-make
-sudo make install
+make > /dev/null
+sudo make install > /dev/null
