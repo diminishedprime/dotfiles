@@ -17,10 +17,4 @@ git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/p
 
 ~/programming/dotfiles/installs/install_xmonad.sh
 
-sudo apt-get install zsh -y > /dev/null
-
-# # oh-my-zsh
-# ## oh-my-zsh is a nice default configuration for zsh that adds some
-# ## features.
-# ln -sf ~/programming/dotfiles/.zshrc ~/.zshrc
-# sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+~/programming/dotfiles/installs/install_zsh.sh
