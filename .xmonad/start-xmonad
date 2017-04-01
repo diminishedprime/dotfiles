@@ -72,9 +72,15 @@ setxkbmap -option 'ctrl:nocaps'
 # Sets the keyboard repeat rate
 xset r rate 200 40
 
-# Sets up some touchpad things
+# Sets up touchpad
 synclient HorizTwoFingerScroll=1
-synclient MaxTapTime=0
+synclient VertEdgeScroll=0
+synclient TouchpadOff=2
+synclient RTCornerButton=0
+synclient RBCornerButton=0
+synclient TapButton1=0
+synclient TapButton2=0
+synclient TapButton3=0
 
 ~/programming/dotfiles/scripts/set_up_hyper_modifiers.sh
 
