@@ -18,3 +18,5 @@ git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/p
 ~/programming/dotfiles/installs/install_xmonad.sh
 
 ~/programming/dotfiles/installs/install_zsh.sh
+
+~/programming/dotfiles/installs/install_scripts.sh
