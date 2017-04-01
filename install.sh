@@ -4,9 +4,8 @@ echo "Running the Ubuntu installation sequence"
 
 echo "Bootstraping the installer directory"
 sudo apt-get install git -y > /dev/null
-git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/ > /dev/null
-# get rid of me before merge
-git checkout cleaner-install
+# TODO: get rid of branch clone before merge into master
+git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/ > /dev/null
 
 ~/programming/dotfiles/installs/install_emacs.sh
 
