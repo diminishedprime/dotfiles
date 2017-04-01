@@ -11,6 +11,7 @@ chmod +x ~/temp/install.sh && \
 ### Docker
 ```sh
 sudo docker run -it ubuntu:16.04 /bin/bash
+
 mkdir -p ~/temp/
 apt-get update > /dev/null && \
 apt-get install make sudo wget apt-utils software-properties-common -y > /dev/null && \
