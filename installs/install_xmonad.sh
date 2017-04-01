@@ -38,7 +38,7 @@ ln -sf ~/programming/dotfiles/.xmonad/.gtkrc-2.0 ~/.gtkrc-2.0
 
 ln -sf ~/programming/dotfiles/.xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -sf ~/programming/dotfiles/.xmonad/start-xmonad ~/.xmonad/start-xmonad
-ln -lf ~/programming/dotfiles/.xmonad/startup-hook ~/.xmonad/startup-hook
+ln -sf ~/programming/dotfiles/.xmonad/startup-hook ~/.xmonad/startup-hook
 ln -sf ~/programming/dotfiles/.xmonad/xmobarrc ~/.xmonad/xmobarrc
 ln -sf ~/programming/dotfiles/scripts/get-backlight ~/.xmonad/get-backlight
 ln -sf ~/programming/dotfiles/scripts/get-volume ~/.xmonad/get-volume
