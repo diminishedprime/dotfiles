@@ -20,16 +20,17 @@
 echo "Installing required packages..."
 sudo apt-get install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev xmobar xcompmgr nitrogen stalonetray moreutils consolekit synapse ssh-askpass-gnome thunar chromium-browser -y
 
+mkdir -p ~/.xmonad/images
+
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
 sudo chmod a+r ~/programming/dotfiles/.xmonad/xmonad.desktop
-sudo ln -sf ~/programming/dotfiles/.xmonad/xmonad.desktop /usr/share/xsessions
-
+sudo ln -sf ~/programming/dotfiles/.xmonad/xmonad.desktop /usr/share/xsessions/xmonad.desktop
 
 sudo chmod a+r ~/programming/dotfiles/.xmonad/images/custom_xmonad_badge.png
-sudo ln -sf ~/programming/dotfiles/.xmonad/images/custom_xmonad_badge.png /usr/share/unity-greeter
+sudo ln -sf ~/programming/dotfiles/.xmonad/images/custom_xmonad_badge.png /usr/share/unity-greeter/custom_xmonad_badge.png
 
 # TODO: I'm not sure if I actually need this, but I'm keeping it for now
 echo "Linking to customized gnome 2 configuration..."
-mv ~/.gtkrc-2.0 ~/gtkrc-2.0.original
+mv ~/.gtkrc-2.0 ~/.gtkrc-2.0.original
 ln -sf ~/programming/dotfiles/.xmonad/.gtkrc-2.0 ~/.gtkrc-2.0
