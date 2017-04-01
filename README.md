@@ -12,7 +12,7 @@ chmod +x ~/temp/install.sh && \
 ```sh
 mkdir -p ~/temp/
 apt-get update > /dev/null && \
-apt-get install sudo wget apt-utils software-properties-common -y > /dev/null && \
+apt-get install make sudo wget apt-utils software-properties-common -y > /dev/null && \
 wget https://raw.githubusercontent.com/diminishedprime/dotfiles/cleaner-install/install.sh  -O ~/temp/install.sh && \
 chmod +x ~/temp/install.sh && \
 ~/temp/install.sh

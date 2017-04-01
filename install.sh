@@ -18,14 +18,6 @@ sudo apt-get install zsh -y > /dev/null
 
 # sudo apt-get install gcc make pkg-config libx11-dev libxtst-dev libxi-dev -y
 
-# # Script for keybindings
-# echo "~/programming/dotfiles/set_up_hyper_modifiers.sh" >> ~/.profile
-
-# # dotfiles
-# ## I go ahead and close this repo since many of my config files are stored
-# ## here. This allows me to symlink all the files I care about.
-#
-
 # # Source Code Pro
 # [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
 # sudo git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
