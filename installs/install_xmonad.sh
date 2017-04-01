@@ -28,6 +28,7 @@ sudo chmod a+r ~/programming/dotfiles/.xmonad/xmonad.desktop
 sudo ln -sf ~/programming/dotfiles/.xmonad/xmonad.desktop /usr/share/xsessions/xmonad.desktop
 
 sudo chmod a+r ~/programming/dotfiles/.xmonad/images/custom_xmonad_badge.png
+mkdir -p /usr/share/unity-greeter/
 sudo ln -sf ~/programming/dotfiles/.xmonad/images/custom_xmonad_badge.png /usr/share/unity-greeter/custom_xmonad_badge.png
 
 # TODO: I'm not sure if I actually need this, but I'm keeping it for now
