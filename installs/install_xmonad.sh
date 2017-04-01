@@ -28,6 +28,7 @@ sudo apt-get install \
      xmobar \
      xcompmgr \
      stalonetray \
+     xbacklight \
      moreutils \
      consolekit \
      synapse \
