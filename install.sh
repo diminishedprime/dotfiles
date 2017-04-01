@@ -15,11 +15,9 @@ git clone -b cleaner-install https://github.com/diminishedprime/dotfiles.git ~/p
 
 ~/programming/dotfiles/installs/install_source_code_pro.sh
 
-sudo apt-get install zsh -y > /dev/null
+~/programming/dotfiles/installs/install_spacemacs.sh
 
-# # Spacemacs
-# git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/
-# ln -sf ~/programming/dotfiles/.spacemacs ~/.spacemacs
+sudo apt-get install zsh -y > /dev/null
 
 # # Xmonad
 # git clone https://github.com/diminishedprime/xmonad-ubuntu-conf.git ~/.xmonad
