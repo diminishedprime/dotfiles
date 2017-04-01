@@ -54,9 +54,9 @@ Config {
     -- To get volume information, we run a custom bash script.
     -- This is because the built-in volume support in xmobar is disabled
     -- in Debian and derivatives like Ubuntu.
-    Run Com "/bin/bash" ["-c", "~/.xmonad/get-volume"] "myvolume" 10,
+    Run Com "/bin/bash" ["-c", "~/programming/dotfiles/scripts/get-volume"] "myvolume" 10,
 
-    Run Com "/bin/bash" ["-c", "~/.xmonad/get-backlight"] "mybacklight" 10,
+    Run Com "/bin/bash" ["-c", "~/programming/dotfiles/scripts/get-backlight"] "mybacklight" 10,
 
     -- This line tells xmobar to read input from stdin. That's how we
     -- get the information that xmonad is sending it for display.
