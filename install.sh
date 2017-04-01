@@ -16,6 +16,8 @@ git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles
 
 ~/programming/dotfiles/installs/install_xmonad.sh
 
-~/programming/dotfiles/installs/install_zsh.sh
-
 ~/programming/dotfiles/installs/install_scripts.sh
+
+~/programming/dotfiles/installs/install_clojure.sh
+
+~/programming/dotfiles/installs/install_zsh.sh
