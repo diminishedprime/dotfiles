@@ -272,7 +272,7 @@ scratchpads :: [NamedScratchpad]
 scratchpads = [ (NS "plex" plexCommand (className =? "Google-chrome")
                  (customFloating floatingVideoRR))
               , (NS "spotify" spotifyCommand (className =? "Spotify")
-                 (customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3)))]
+                 (customFloating floatingVideoRR))]
 
 
 moveVertical     x = keysMoveWindow   ( 0      , 10 * x )

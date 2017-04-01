@@ -101,7 +101,12 @@ gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 # xmonad related, but it's handy if you're a vim user.
 setxkbmap -option 'ctrl:nocaps'
 
+# Sets the keyboard repeat rate
 xset r rate 200 40
+
+# Sets up some touchpad things
+synclient HorizTwoFingerScroll=1
+synclient MaxTapTime=0
 
 ~/programming/dotfiles/scripts/set_up_hyper_modifiers.sh
 
