@@ -1,8 +1,0 @@
-* Todo
-+ [ ] Add spotify linux installation to =install.sh=
-+ [ ] Add chrome installation to =install.sh=
-+ [ ] Add autokey & needed to be symlinked scripts to =install.sh=
-+ [ ] Add xbacklight to =install.sh=
-+ [ ] double check that there aren't any things the config is using that aren't
-  included in a base install.
-+ [ ] get the stuff from the .xmonad repo into here, and make it work via symlinks.

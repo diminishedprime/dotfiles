@@ -1,0 +1,27 @@
+* Dotfiles
+** First Time Setup
+*** Ubuntu
+    #+BEGIN_SRC sh
+      mkdir -p ~/temp/
+      wget https://raw.githubusercontent.com/diminishedprime/dotfiles/master/install.sh -O ~/temp/install.sh && \
+          chmod +x ~/temp/install.sh && \
+          ~/temp/install.sh
+    #+END_SRC
+*** Docker
+    #+BEGIN_SRC sh
+      sudo docker run -it ubuntu:16.04 /bin/bash
+
+      mkdir -p ~/temp/
+      apt-get update > /dev/null && \
+          apt-get install make sudo wget apt-utils software-properties-common -y > /dev/null && \
+          wget https://raw.githubusercontent.com/diminishedprime/dotfiles/cleaner-install/install.sh  -O ~/temp/install.sh && \
+          chmod +x ~/temp/install.sh && \
+          ~/temp/install.sh
+    #+END_SRC
+** Todo
+   + [ ] Add spotify linux installation to =install.sh=
+   + [ ] Add chrome installation to =install.sh=
+   + [ ] Add autokey & needed to be symlinked scripts to =install.sh=
+   + [ ] Add xbacklight to =install.sh=
+   + [ ] double check that there aren't any things the config is using that aren't included in a base install.
+   + [ ] get the stuff from the .xmonad repo into here, and make it work via symlinks.
