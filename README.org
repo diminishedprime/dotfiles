@@ -19,6 +19,7 @@
           ~/temp/install.sh
     #+END_SRC
 ** Todo
+   + disable tap-to-touch on xps mousepad
    + Add autokey & needed to be symlinked scripts to =install.sh=
    + Add xbacklight to =install.sh=
    + double check that there aren't any things the config is using that aren't included in a base install.
