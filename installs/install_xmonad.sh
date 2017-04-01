@@ -33,6 +33,7 @@ sudo apt-get install \
      synapse \
      ssh-askpass-gnome \
      thunar \
+     blueman \
      chromium-browser -y
 
 echo "Creating xmonad xsession configuration..."
