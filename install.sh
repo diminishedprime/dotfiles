@@ -10,7 +10,7 @@ git config --global user.email "matthewjhamrick@gmail.com"
 git config --global user.name "Matt Hamrick"
 
 echo "Bootstraping the installer directory"
-git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/ > /dev/null
+git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/ > /dev/null 2>&1
 
 ~/programming/dotfiles/installs/install_emacs.sh
 

@@ -7,7 +7,7 @@ sudo apt-get update > /dev/null
 sudo apt-get install emacs25 -y > /dev/null
 
 # Spacemacs
-git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/ > /dev/null
+git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/ > /dev/null 2>&1
 ln -sf ~/programming/dotfiles/emacs/.spacemacs ~/.spacemacs
 
 emacs --daemon > /dev/null 2>&1 &
