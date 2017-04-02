@@ -10,4 +10,4 @@ sudo apt-get install emacs25 -y > /dev/null
 git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/ > /dev/null
 ln -sf ~/programming/dotfiles/emacs/.spacemacs ~/.spacemacs
 
-emacs --daemon > /dev/null &
+(emacs --daemon > /dev/null &)
