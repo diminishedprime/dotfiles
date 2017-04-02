@@ -4,6 +4,9 @@ echo "Running the Ubuntu installation sequence"
 
 echo "Bootstraping the installer directory"
 sudo apt-get install git -y > /dev/null
+git config --global user.email "matthewjhamrick@gmail.com"
+git config --global user.name "Matt Hamrick"
+
 git clone https://github.com/diminishedprime/dotfiles.git ~/programming/dotfiles/ > /dev/null
 
 ~/programming/dotfiles/installs/install_emacs.sh

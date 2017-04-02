@@ -31,11 +31,16 @@ sudo apt-get install \
      xbacklight \
      moreutils \
      consolekit \
-     synapse \
      ssh-askpass-gnome \
      thunar \
      blueman \
      chromium-browser -y
+
+# Bleeding edge synapse has fixed an issue where you can't change the hotkey away from ctrl+space
+sudo add-apt-repository ppa:synapse-core/testing -y
+sudo apt-get install synapse -y
+mkdir -p ~/.config/synapse/
+ln -sf ~/programming/dotfiles/.xmonad/synapse/config.json ~/.config/synapse/config.json
 
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
