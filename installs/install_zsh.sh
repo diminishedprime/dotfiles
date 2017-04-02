@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get install zsh -y > /dev/null
 
 echo "Installing zsh"

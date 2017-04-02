@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -uoe
+
 echo "Running the Ubuntu installation sequence"
 
 echo "Bootstraping the installer directory"
