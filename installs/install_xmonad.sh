@@ -34,11 +34,12 @@ sudo apt-get install \
      ssh-askpass-gnome \
      thunar \
      blueman \
-     chromium-browser -y
+     powertop \
+     chromium-browser -y > /dev/null 2>&1
 
 # Bleeding edge synapse has fixed an issue where you can't change the hotkey away from ctrl+space
-sudo add-apt-repository ppa:synapse-core/testing -y
-sudo apt-get install synapse -y
+sudo add-apt-repository ppa:synapse-core/testing -y > /dev/null 2>&1
+sudo apt-get install synapse -y > /dev/null 2>&1
 mkdir -p ~/.config/synapse/
 ln -sf ~/programming/dotfiles/.xmonad/synapse/config.json ~/.config/synapse/config.json
 
@@ -65,5 +66,3 @@ ln -sf ~/programming/dotfiles/.xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -sf ~/programming/dotfiles/.xmonad/start-xmonad ~/.xmonad/start-xmonad
 ln -sf ~/programming/dotfiles/.xmonad/startup-hook ~/.xmonad/startup-hook
 ln -sf ~/programming/dotfiles/.xmonad/xmobarrc.hs ~/.xmonad/xmobarrc.hs
-
-sudo apt-get install powertop -y
