@@ -12,8 +12,10 @@
       sudo docker run -it ubuntu:16.04 /bin/bash
 
       mkdir -p ~/temp/
-      apt-get update && \
-          apt-get install make sudo wget apt-utils software-properties-common -y > /dev/null && \
+      LEIN_ROOT=true
+      apt-get update > /dev/null && \
+          apt-get install apt-utils -y > /dev/null && \
+          apt-get install dialog make sudo wget software-properties-common -y > /dev/null && \
           wget https://raw.githubusercontent.com/diminishedprime/dotfiles/master/install.sh  -O ~/temp/install.sh && \
           chmod +x ~/temp/install.sh && \
           ~/temp/install.sh
