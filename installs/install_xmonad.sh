@@ -42,6 +42,10 @@ sudo apt-get install synapse -y
 mkdir -p ~/.config/synapse/
 ln -sf ~/programming/dotfiles/.xmonad/synapse/config.json ~/.config/synapse/config.json
 
+# Set up gnome-terminal to not show the menubar by default
+dconf write /org/gnome/terminal/legacy/default-show-menubar false
+
+
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
 sudo cp ~/programming/dotfiles/.xmonad/xmonad.desktop /usr/share/xsessions/
