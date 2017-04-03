@@ -17,3 +17,22 @@
      pm-suspend
      pm-hibernate
    #+END_SRC
+** xps 9360 tap-to-click issue
+   Another weird one. If I go into normal gnome, there is an option in the
+   settings to disable tap-to-click. When I use that, it works correctly,
+   however, if I try to disable tap-to-click in xmonad, it doesn't work
+   correctly with adding this into
+   =/usr/share/X11/xorg.conf.d/51-synaptics-quirks.conf=
+   #+BEGIN_SRC sh
+     # Disable generic Synaptics device, as we're using
+     # "DLL075B:01 06CB:76AF Touchpad"
+     # Having multiple touchpad devices running confuses syndaemon
+     Section "InputClass"
+     Identifier "SynPS/2 Synaptics TouchPad"
+     MatchProduct "SynPS/2 Synaptics TouchPad"
+     MatchIsTouchpad "on"
+     MatchOS "Linux"
+     MatchDevicePath "/dev/input/event*"
+     Option "Ignore" "on"
+     EndSection
+   #+END_SRC

@@ -21,7 +21,6 @@
           ~/temp/install.sh
     #+END_SRC
 ** Todo
-   + Actually fix the tap-to-click since it's back for some reason in xmonad...
    + Add 4-finger swipes to the touchpad for switching workspaces.
    + Add autokey (for emacs like bindings in chrome, etc) & needed to be
      symlinked scripts to =install.sh=
