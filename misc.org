@@ -1,0 +1,19 @@
+* Misc
+
+** xps 9360 backlight issue?
+   I haven't figured out exactly what the cause of it was, but it seems like
+   hibernation or sleep can cause issues with this laptop's screen backlight. At
+   some point (I think after waking it up from either hibernation or sleep,
+   though I can't really remember for sure) the backlight got stuck on max
+   brightness. One thing that was weird about this is the bios has a brightness
+   control (for some reason) and it was still working so I was pretty sure it
+   wasn't a hardware issue. I did try installing windows and it didn't seem to
+   fix the problem there either, but I was focused on trying to apply a patch
+   (for a previous generation) so I might have missed it. Either way, I was able
+   to fix the problem by running these 3 commands, though I think it was just
+   the third that fixed it.
+   #+BEGIN_SRC sh
+     systemctl suspend
+     pm-suspend
+     pm-hibernate
+   #+END_SRC
