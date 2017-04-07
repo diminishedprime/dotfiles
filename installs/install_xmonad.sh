@@ -47,7 +47,7 @@ ln -sf ~/programming/dotfiles/.xmonad/synapse/config.json ~/.config/synapse/conf
 dconf write /org/gnome/terminal/legacy/default-show-menubar false
 
 # install and setup config for autokey
-sudo apt-get install autokey -y > /dev/null 2>&1
+sudo apt-get install autokey-gtk -y > /dev/null 2>&1
 ln -sf ~/programming/dotfiles/.xmonad/autokey/ ~/.config/autokey
 
 

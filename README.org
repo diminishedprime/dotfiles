@@ -22,7 +22,7 @@
     #+END_SRC
 ** Todo
    + Add 4-finger swipes to the touchpad for switching workspaces.
-   + Add autokey (for emacs like bindings in chrome, etc) & needed to be
-     symlinked scripts to =install.sh=
    + double check that there aren't any things the config is using that aren't
      included in a base install.
+   + figure out how to switch audio devices from the xmobar (or the stalontray)
+   + figure out if this works for my bose headset
