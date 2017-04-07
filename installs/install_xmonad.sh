@@ -46,6 +46,10 @@ ln -sf ~/programming/dotfiles/.xmonad/synapse/config.json ~/.config/synapse/conf
 # Set up gnome-terminal to not show the menubar by default
 dconf write /org/gnome/terminal/legacy/default-show-menubar false
 
+# install and setup config for autokey
+sudo apt-get install autokey -y > /dev/null 2>&1
+ln -sf ~/programming/dotfiles/.xmonad/autokey/ ~/.config/autokey
+
 
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
