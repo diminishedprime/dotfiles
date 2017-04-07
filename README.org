@@ -26,3 +26,4 @@
      included in a base install.
    + figure out how to switch audio devices from the xmobar (or the stalontray)
    + figure out if this works for my bose headset
+   + add network status to xmobar
