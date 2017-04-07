@@ -13,7 +13,7 @@
         "sortByUsageCount": true, 
         "recordTimingThreshold": 0.1, 
         "scriptGlobals": {
-            "hotkey": "<ctrl>+p"
+            "hotkey": "<alt>+0"
         }, 
         "undoUsingBackspace": true, 
         "notificationIcon": "autokey-status", 
@@ -22,8 +22,8 @@
         "menuTakesFocus": false, 
         "interfaceType": "XRecord", 
         "windowDefaultSize": [
-            1440, 
-            875
+            3200, 
+            1755
         ], 
         "showToolbar": true, 
         "serviceRunning": true, 
@@ -33,13 +33,8 @@
             100
         ], 
         "workAroundApps": ".*VirtualBox.*|krdc.Krdc", 
-        "hPanePosition": 622, 
+        "hPanePosition": 1385, 
         "isFirstRun": true
-    }, 
-    "recordHotkey": {
-        "hotKey": "<button27>", 
-        "modifiers": [], 
-        "enabled": true
     }, 
     "userCodeDir": null, 
     "version": "0.91.1", 
