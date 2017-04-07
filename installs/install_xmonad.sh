@@ -50,6 +50,8 @@ dconf write /org/gnome/terminal/legacy/default-show-menubar false
 sudo apt-get install autokey-gtk -y > /dev/null 2>&1
 ln -sf ~/programming/dotfiles/.xmonad/autokey/ ~/.config/autokey
 
+# Install font awesome which is used for the pretty icons :)
+sudo apt-get install fonts-font-awesome -y > /dev/null 2>&1
 
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
