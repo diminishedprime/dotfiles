@@ -31,6 +31,10 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;;;; Frontend
+     javascript
+     html
+     ;;;; End Frontend
      auto-completion
      better-defaults
      emacs-lisp
@@ -125,7 +129,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 33
+                               :size 16
                                :weight ultra-light
                                :width normal
                                :powerline-scale 1.1)
@@ -307,6 +311,22 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+
+  ;;;; Front End Stuff
+  ;; Use web mode for .js and .jsx files
+  (add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
+
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2)
+  (setq js-indent-level 2)
+  (setq-default flycheck-disabled-checkers
+                (append flycheck-disabled-checkers
+                        '(javascript-jshint)))
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
+  (setq web-mode-content-types-alist
+        '(("jsx" . "\\.js[x]?\\'")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
