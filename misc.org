@@ -17,6 +17,8 @@
      pm-suspend
      pm-hibernate
    #+END_SRC
+*** EDIT
+    Turns out the actual problem was a hardware thing.
 ** xps 9360 tap-to-click issue
    Another weird one. If I go into normal gnome, there is an option in the
    settings to disable tap-to-click. When I use that, it works correctly,

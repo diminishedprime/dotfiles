@@ -161,7 +161,9 @@ projects = [ Project { projectName      = devWorkspace
                      , projectStartHook = Just $ do spawnOn mailWorkSpace $ "chromium-browser --new-window --app=\"https://inbox.google.com/\""}
            , Project { projectName     = perfWorkspace
                      , projectDirectory = "~/"
-                     , projectStartHook = Just $ do spawnOn perfWorkspace $ "gnome-system-monitor"}]
+                     , projectStartHook = Just $ do spawnOn perfWorkspace $ "gnome-system-monitor"
+                                                    spawnOn perfWorkspace $ "pavucontrol"
+                     }]
 
 myWorkspaces :: [String]
 myWorkspaces = [ mailWorkSpace  , "8:Dbg"        , gimpWorkspace
