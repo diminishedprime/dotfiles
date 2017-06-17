@@ -1,3 +1,10 @@
+* Spmaster
+
+3. add in a sound effect when they submit a word
+5. everything lower-case automatically when typing a hint.
+6. Add a timer.
+7. Make it where the word-buttons things don't change your cursor.
+
 * Misc
 
 ** xps 9360 backlight issue?

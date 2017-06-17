@@ -1,0 +1,2 @@
+* Audio
+To switch audio devices open "PulseAudio Volume Control"
