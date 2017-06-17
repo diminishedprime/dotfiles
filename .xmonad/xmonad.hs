@@ -265,6 +265,8 @@ myLayouts =
 floatingVideoRR :: W.RationalRect
 floatingVideoRR = W.RationalRect ((100-36)/100) (0/1) (36/100) (25/100)
 
+spotifyVideoRR = W.RationalRect 1 1 1 1
+
 plexCommand :: String
 plexCommand = "google-chrome --app=\"http://plex.mjh.io/web/index.html\" --new-window"
 spotifyCommand :: String
@@ -274,14 +276,14 @@ scratchpads :: [NamedScratchpad]
 scratchpads = [ (NS "plex" plexCommand (className =? "Google-chrome")
                  (customFloating floatingVideoRR))
               , (NS "spotify" spotifyCommand (className =? "Spotify")
-                 (customFloating floatingVideoRR))]
+                 (customFloating spotifyVideoRR))]
 
 
-moveVertical     x = keysMoveWindow   ( 0      , 10 * x )
-resizeVertical   x = keysResizeWindow ( 0      , 10 * x ) (1,1)
-moveHorizontal   x = keysMoveWindow   ( 10 * x , 0      )
-resizeHorizontal x = keysResizeWindow ( 10 * x , 0      ) (1,1)
-resizeCorner     x = keysResizeWindow ( 10 * x , 10 * x ) (1,1)
+moveVertical     x = keysMoveWindow   ( 0      , 16 * x )
+resizeVertical   x = keysResizeWindow ( 0      , 16 * x ) (1,1)
+moveHorizontal   x = keysMoveWindow   ( 16 * x , 0      )
+resizeHorizontal x = keysResizeWindow ( 16 * x , 0      ) (1,1)
+resizeCorner     x = keysResizeWindow ( 16 * x , 9 * x ) (1,1)
 
 modC = myModMask  .|. controlMask
 modM = myModMask  .|. mod1Mask
@@ -300,27 +302,28 @@ myKeyBindings = [((myModMask, xK_b), sendMessage ToggleStruts)
                                                                  [] -> windows copyToAll
                                                                  _ -> killAllOtherCopies)
 
-                , ((modM, xK_h), withFocused (resizeHorizontal ( 1)))
+
                 , ((modS, xK_h), withFocused (moveHorizontal   (-1)))
-                , ((modM, xK_l), withFocused (resizeHorizontal (-1)))
                 , ((modS, xK_l), withFocused (moveHorizontal   ( 1)))
+                , ((modS, xK_j), withFocused (moveVertical     ( 1)))
+                , ((modS, xK_k), withFocused (moveVertical     (-1)))
 
+                , ((modM, xK_h), withFocused (resizeHorizontal ( 1)))
+                , ((modM, xK_l), withFocused (resizeHorizontal (-1)))
                 , ((modM, xK_k), withFocused (resizeVertical   ( 1)))
-                , ((modS, xK_k), withFocused (moveVertical     ( 1)))
                 , ((modM, xK_j), withFocused (resizeVertical   (-1)))
-                , ((modS, xK_j), withFocused (moveVertical     (-1)))
 
-                , ((modM, xK_n), withFocused (resizeCorner     (-1)))
-                , ((modM, xK_p), withFocused (resizeCorner     ( 1)))
+                , ((modM, xK_n), withFocused (resizeCorner     (-2)))
+                , ((modM, xK_p), withFocused (resizeCorner     ( 2)))
 
 
                 -- , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
                 , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
                 , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
-                , ((0, 0x1008FF03), spawn "xbacklight -10")
-                , ((myModMask, 0x1008FF03), spawn "xbacklight -1")
-                , ((0, 0x1008FF02), spawn "xbacklight +10")
-                , ((myModMask, 0x1008FF02), spawn "xbacklight +1")
+                , ((0, 0x1008FF03), spawn "light -U 10")
+                , ((myModMask, 0x1008FF03), spawn "light -U 1")
+                , ((0, 0x1008FF02), spawn "light -A 10")
+                , ((myModMask, 0x1008FF02), spawn "light -A 1")
                 ]
 
 

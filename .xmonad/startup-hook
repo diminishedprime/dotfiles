@@ -22,4 +22,4 @@ if [ -z "$(pgrep synapse)" ] ; then synapse -s & fi
 if [ -z "$(pgrep blueman-applet)" ] ; then blueman-applet & fi
 
 # Set the default backlight setting to 30%
-xbacklight -set 15
+light -S 15
