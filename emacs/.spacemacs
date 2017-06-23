@@ -337,28 +337,33 @@ you should place your code here."
 
   (eval-after-load 'web-mode
     '(add-hook 'web-mode-hook #'add-node-modules-path))
-  (eval-after-load 'web-mode
-    '(add-hook 'web-mode-hook #'electric-pair-mode))
 
-  (setq web-mode-markup-indent-offset 2
-        web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2)
+  (require 'flycheck)
 
-  (setq js-indent-level 2)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
 
-  ;; disable jshint since we want eslint checking
   (setq flycheck-disabled-checkers '(javascript-jshint))
   (setq flycheck-checkers '(javascript-eslint))
 
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-mode)
 
+  (setq-default flycheck-temp-prefix ".flycheck")
 
   (setq-default js2-strict-missing-semi-warning nil)
   (setq js2-include-node-externs 't)
   (setq js2-include-jslist-globals 't)
 
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+
   (add-hook 'web-mode-hook #'electric-pair-mode)
+
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (if (equal web-mode-content-type "javascript")
+                  (web-mode-set-content-type "jsx"))
+              (message "now set to: %s" web-mode-content-type)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
