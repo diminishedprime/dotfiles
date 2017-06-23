@@ -31,7 +31,7 @@ const Counter = ({
       (heartbeats > 0) &&
       <div>
         <div className="counterText">{heartbeats}</div>
-        heartbeats. (They're kinda like clicks)
+        heartbeats. (They&#39;re kinda like clicks)
       </div>
     }
   </div>

@@ -11,8 +11,8 @@ const App = ({hi, hasError}) => (
     <div className="content">
       <Counter />
       {hi.map((text, idx) => (
-         <div className="hi" key={idx}>{text}</div>
-       ))}
+        <div className="hi" key={idx}>{text}</div>
+      ))}
     </div>
   </div>
 )
