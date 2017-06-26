@@ -1,3 +1,4 @@
+import path from 'path'
 import {
   createServer,
 } from 'http'
@@ -18,8 +19,7 @@ const server = createServer(app)
 connect(server)
 
 // Serve static resources
-/* import path from 'path'
- * app.use('/', express.static(path.resolve(__dirname, 'public')))*/
+app.use('/', express.static(path.resolve(__dirname + '../build/')))
 
 server.listen(APP_PORT, () => {
   // eslint-disable-next-line no-console
