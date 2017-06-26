@@ -1,5 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {
+  connect,
+} from 'react-redux'
+
 import ErrorBar from '../error-bar/error-bar.jsx'
 import Counter from '../counter/counter.jsx'
 import './app.css'

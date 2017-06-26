@@ -1,10 +1,24 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { afIncrementCounter, afClearActionLog } from '../../redux.js'
-import { afAsyncIncrementCounter } from '../../sagas/incrementAsync.js'
-import { afRetrieveHi } from '../../sagas/retrieve-hi.js'
-import { afReplayActions } from '../../sagas/replay-saga.js'
-import { afConnectToWebsocket } from '../../sagas/connect-to-websocket.js'
+import {
+  connect,
+} from 'react-redux'
+
+import {
+  afIncrementCounter,
+  afClearActionLog,
+} from '../../redux.js'
+import {
+  afAsyncIncrementCounter,
+} from '../../sagas/incrementAsync.js'
+import {
+  afRetrieveHi,
+} from '../../sagas/retrieve-hi.js'
+import {
+  afReplayActions,
+} from '../../sagas/replay-saga.js'
+import {
+  afConnectToWebsocket,
+} from '../../sagas/connect-to-websocket.js'
 import './counter.css'
 
 const Counter = ({

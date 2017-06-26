@@ -1,7 +1,15 @@
-import { eventChannel, END } from 'redux-saga'
-import { takeLatest, take, put } from 'redux-saga/effects'
-import { afIncrementHeartbeats } from '../redux.js'
+import {
+  eventChannel,
+  END,
+} from 'redux-saga'
 import io from 'socket.io-client'
+
+import {
+  afIncrementHeartbeats,
+} from '../redux.js'
+
+
+import { takeLatest, take, put } from 'redux-saga/effects'
 
 export const CONNECT_TO_WEBSOCKET = 'async connect to websocket'
 export const afConnectToWebsocket = () => ({

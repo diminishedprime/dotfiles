@@ -1,7 +1,12 @@
-import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { rootSaga } from './sagas/index.js'
 import R from 'ramda'
+import {
+  createStore,
+  applyMiddleware,
+} from 'redux'
+
+import { rootSaga } from './sagas/index.js'
+
 
 // Paths & Initial State
 const counterPath = R.lensPath(['counter'])

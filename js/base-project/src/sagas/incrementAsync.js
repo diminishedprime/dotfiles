@@ -1,6 +1,15 @@
-import { delay } from 'redux-saga'
-import { afIncrementCounter } from '../redux.js'
-import { put, takeEvery } from 'redux-saga/effects'
+import {
+  delay,
+} from 'redux-saga'
+
+import {
+  afIncrementCounter,
+} from '../redux.js'
+
+import {
+  put,
+  takeEvery,
+} from 'redux-saga/effects'
 
 const ASYNC_INCREMENT_COUNTER = 'async increment counter'
 export const afAsyncIncrementCounter = () => ({

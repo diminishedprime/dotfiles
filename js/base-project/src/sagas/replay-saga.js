@@ -1,5 +1,8 @@
-import { eventChannel, END} from 'redux-saga'
-import { put, takeLatest, takeEvery, select, call, take } from 'redux-saga/effects'
+import {
+  eventChannel,
+  END,
+} from 'redux-saga'
+
 import {
   afResetState,
   afReplaying,
@@ -7,6 +10,15 @@ import {
   ADD_TO_ACTION_LOG,
   RESET_STATE,
 } from '../redux.js'
+
+import {
+  put,
+  takeLatest,
+  takeEvery,
+  select,
+  call,
+  take,
+} from 'redux-saga/effects'
 
 export const REPLAY_ACTIONS = 'async replay actions'
 export const afReplayActions = () => ({

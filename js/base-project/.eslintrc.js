@@ -8,6 +8,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:redux-saga/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,6 +21,7 @@ module.exports = {
   "plugins": [
     "react",
     "redux-saga",
+    "import",
   ],
   "rules": {
     "indent": ["error", 2, {
@@ -64,5 +67,8 @@ module.exports = {
     "no-unused-vars": ["error", {"argsIgnorePattern": "^_$"}],
     "react/prop-types": "off",
     "redux-saga/no-unhandled-errors": "off",
+
+    "import/order": ["error", {"newlines-between": "always"}],
+    "import/namespace": ["error"],
   }
 }

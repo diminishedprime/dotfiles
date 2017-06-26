@@ -1,6 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { afDismissError } from '../../redux.js'
+import {
+  connect,
+} from 'react-redux'
+
+import {
+  afDismissError,
+} from '../../redux.js'
 import './error-bar.css'
 
 const ErrorBar = ({text, severity, dismiss}) => (
