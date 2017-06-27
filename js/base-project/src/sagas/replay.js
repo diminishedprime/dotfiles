@@ -11,7 +11,6 @@ import {
 } from '../redux/actions.js'
 import {
   actionLogPath,
-  replayingPath,
 } from '../redux/paths.js'
 
 import {

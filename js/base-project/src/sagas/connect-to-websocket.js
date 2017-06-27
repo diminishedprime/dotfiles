@@ -27,6 +27,7 @@ const connectToWebsocket = function* () {
       if (message === 'heartbeat') {
         yield put(afIncrementHeartbeats())
       } else {
+        // eslint-disable-next-line no-console
         console.log(message)
       }
     }
