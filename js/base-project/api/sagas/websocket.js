@@ -1,15 +1,19 @@
+import R from 'ramda'
 import io from 'socket.io'
 import {
   eventChannel,
 } from 'redux-saga'
 
 import {
+  usersPath,
+} from '../redux/paths.js'
+import {
   CONNECT_WEBSOCKET_SERVER,
   BROADCAST_MESSAGE,
   BROADCAST_ACTION,
   afAddUser,
   afRemoveUser,
-  afStartTimer,
+  afBroadcastMessage,
 } from '../redux/actions.js'
 
 import {
@@ -27,7 +31,7 @@ const broadcastMessage = function* () {
   let action
   while((action = yield take(channel))) {
     const { message } = action
-    const users = yield select((state) => state.users)
+    const users = yield select(R.view(usersPath))
     users.forEach((ws) => ws.emit('message', message))
   }
 }
@@ -38,13 +42,14 @@ const broadcastAction = function* () {
   let chanAction
   while((chanAction = yield take(channel))) {
     const { action } = chanAction
-    const users = yield select((state) => state.users)
+    const users = yield select(R.view(usersPath))
     users.forEach(({ws}) => ws.emit('action', action))
   }
 }
 
 const addUser = function* (ws) {
   yield(put(afAddUser(ws)))
+  ws.emit('message', 'thanks for connecting via websockets')
 }
 
 const removeUser = function* (disconnectChan) {
@@ -61,11 +66,21 @@ const connectWS = function* (ws) {
     return () => console.log('something unsubscribe socket')
   })
 
-  yield put(afStartTimer())
   yield all([
     removeUser(disconnectChan),
     addUser(ws),
   ])
+}
+
+const startHeartbeat = function* () {
+  const heartbeatChan = eventChannel((emitter) => {
+    const iv = setInterval(() => emitter('heartbeat'), 1000)
+    return () => clearInterval(iv)
+  })
+  for (;;) {
+    const heartbeat = yield take(heartbeatChan)
+    yield put(afBroadcastMessage(heartbeat))
+  }
 }
 
 const connectWSS = function* () {
@@ -76,6 +91,7 @@ const connectWSS = function* () {
     // eslint-disable-next-line no-console
     return () => console.log('something unsubscribe from wss emitter?')
   })
+  yield fork(startHeartbeat)
   for (;;) {
     const ws = yield take(wssConnectionChan)
     yield fork(connectWS, ws)
