@@ -1,15 +1,15 @@
-import watchReplay from './replay-saga.js'
+import incrementCounter from './increment-counter.js'
 import watchConnectToWebsocket from './connect-to-websocket.js'
-import retrieveHi from './retrieve-hi.js'
-import incrementAsync from './incrementAsync.js'
+import apiRequests from './api-requests.js'
 
-import { all } from 'redux-saga/effects'
+import {
+  all,
+} from 'redux-saga/effects'
 
 export const rootSaga = function* () {
   yield all([
-    incrementAsync(),
-    retrieveHi(),
-    watchReplay(),
+    apiRequests(),
     watchConnectToWebsocket(),
+    incrementCounter(),
   ])
 }

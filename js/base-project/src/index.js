@@ -8,7 +8,7 @@ import App from './components/app/app.jsx'
 import registerServiceWorker from './registerServiceWorker'
 import {
   store,
-} from './redux.js'
+} from './redux/index.js'
 
 ReactDOM.render(
   <Provider store={store}>

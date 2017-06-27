@@ -6,19 +6,11 @@ import {
 import {
   afIncrementCounter,
   afClearActionLog,
-} from '../../redux.js'
-import {
   afAsyncIncrementCounter,
-} from '../../sagas/incrementAsync.js'
-import {
   afRetrieveHi,
-} from '../../sagas/retrieve-hi.js'
-import {
   afReplayActions,
-} from '../../sagas/replay-saga.js'
-import {
   afConnectToWebsocket,
-} from '../../sagas/connect-to-websocket.js'
+} from '../../redux/actions.js'
 import './counter.css'
 
 const Counter = ({

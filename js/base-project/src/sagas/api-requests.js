@@ -3,19 +3,13 @@ import axios from 'axios'
 import {
   afAppendHi,
   afError,
-} from '../redux.js'
+  RETRIEVE_HI,
+} from '../redux/actions.js'
 
 import {
   put,
   takeEvery,
 } from 'redux-saga/effects'
-
-
-
-const RETRIEVE_HI = 'async retrieve hi'
-export const afRetrieveHi = () => ({
-  type: RETRIEVE_HI,
-})
 
 // Saga Handlers
 const retrieveHiAysnc = function* () {

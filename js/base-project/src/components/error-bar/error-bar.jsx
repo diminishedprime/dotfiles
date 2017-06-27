@@ -5,7 +5,7 @@ import {
 
 import {
   afDismissError,
-} from '../../redux.js'
+} from '../../redux/actions.js'
 import './error-bar.css'
 
 const ErrorBar = ({text, severity, dismiss}) => (
