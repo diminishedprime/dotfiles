@@ -6,6 +6,7 @@ import {
   initialActionLog,
 } from './initial-state.js'
 import {
+  replayingPath,
   counterPath,
   heartbeatsPath,
   hiPath,
@@ -13,13 +14,12 @@ import {
   errorTextPath,
   errorSeverityPath,
   actionLogPath,
-  replayingPath,
 } from './paths.js'
 import {
+  SET_REPLAYING,
   RESET_STATE,
-  REPLAYING,
   CLEAR_ACTION_LOG,
-  ADD_TO_ACTION_LOG,
+  ADD_ACTION,
   DISMISS_ERROR,
   ERROR_OCCURED,
   APPEND_HI,
@@ -28,13 +28,10 @@ import {
 } from './actions.js'
 
 // Reducers
-const replayingActionReducer = (state, {flag}) =>
-  R.set(replayingPath, flag, state)
-
 const clearActionLogReducer = (state, _) =>
   R.set(actionLogPath, initialActionLog, state)
 
-const addToActionLogReducer = (state, action) =>
+const addAction = (state, {action}) =>
   R.over(actionLogPath, R.append(action), state)
 
 const incrementCounterReducer = (state, _) =>
@@ -55,16 +52,18 @@ const hiErrorReducer = (state, {
 const dismissErrorReducer = (state, _) =>
   R.set(errorPath, initialErrorState, state)
 
-export const appReducer = (state=initialState, action) => {
+const setReplaying = (state, {flag}) =>
+  R.set(replayingPath, flag, state)
+
+export const app = (state=initialState, action) => {
   switch(action.type) {
-    case REPLAYING:
-      return replayingActionReducer(state, action)
+    case SET_REPLAYING: return setReplaying(state, action)
     case RESET_STATE:
       return initialState
     case CLEAR_ACTION_LOG:
       return clearActionLogReducer(state, action)
-    case ADD_TO_ACTION_LOG:
-      return addToActionLogReducer(state, action)
+    case ADD_ACTION:
+      return addAction(state, action)
     case DISMISS_ERROR:
       return dismissErrorReducer(state, action)
     case ERROR_OCCURED:

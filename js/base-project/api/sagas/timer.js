@@ -1,47 +1,37 @@
 import {
-  START_TIMER,
-  STOP_TIMER,
-  afTimerTick,
-} from '../../src/redux/actions.js'
+  delay,
+} from 'redux-saga'
 
 import {
-  actionChannel,
-  call,
+  START_TIMER,
+  STOP_TIMER,
+  afBroadcastMessage,
+}from '../redux/actions.js'
+
+import {
   take,
   race,
   put,
+  takeLatest,
 } from 'redux-saga/effects'
 
-const wait = (millis) => (
-  new Promise((resolve) => {
-    setTimeout(() => resolve(), millis)
-  })
-)
-
-const runTimer = function* () {
-  const channel = yield actionChannel(START_TIMER)
-
-  while(yield take(channel)) {
-    let seconds = 60
-    for (;;) {
-      const { stopped } = yield race({
-        stopped: take(STOP_TIMER),
-        tick: call(wait, 1000),
-      })
-
-      if (!stopped) {
-        seconds--
-        if (seconds === 0) {
-          // Yield anything that should happen at the timer being over
-        } else {
-          // Yield anything that should happen during the timer tick
-          yield put(afTimerTick(seconds))
-        }
-      } else {
-        break
-      }
+const timer = function* () {
+  for (let seconds = 6; seconds > 0; seconds--) {
+    const { tick, stopped } = yield race({
+      stopped: take(STOP_TIMER),
+      tick: delay(1000),
+    })
+    if (tick) {
+      yield put(afBroadcastMessage(seconds))
+    } else if (stopped) {
+      // eslint-disable-next-line no-console
+      console.log('stopped intentially, you might want to add logic here')
     }
   }
+}
+
+const runTimer = function* () {
+  yield takeLatest(START_TIMER, timer)
 }
 
 export default runTimer

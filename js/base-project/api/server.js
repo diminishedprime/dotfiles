@@ -5,8 +5,13 @@ import {
 
 import express from 'express'
 
+import {
+  store,
+} from './redux/index.js'
+import {
+  afConnectWebsocketServer,
+} from './redux/actions.js'
 import addRoutes from './routes.js'
-import connect from './websocket.js'
 
 const APP_PORT = 3003
 
@@ -16,7 +21,8 @@ const app = express()
 addRoutes(app)
 
 const server = createServer(app)
-connect(server)
+
+store.dispatch(afConnectWebsocketServer(server))
 
 // Serve static resources
 app.use('/', express.static(path.resolve(__dirname + '../build/')))

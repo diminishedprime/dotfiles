@@ -26,6 +26,8 @@ const connectToWebsocket = function* () {
       const message = yield take(wsChan)
       if (message === 'heartbeat') {
         yield put(afIncrementHeartbeats())
+      } else {
+        console.log(message)
       }
     }
   } finally {

@@ -1,6 +1,7 @@
 import incrementCounter from './increment-counter.js'
 import watchConnectToWebsocket from './connect-to-websocket.js'
 import apiRequests from './api-requests.js'
+import runReplay from './replay.js'
 
 import {
   all,
@@ -11,5 +12,6 @@ export const rootSaga = function* () {
     apiRequests(),
     watchConnectToWebsocket(),
     incrementCounter(),
+    runReplay(),
   ])
 }

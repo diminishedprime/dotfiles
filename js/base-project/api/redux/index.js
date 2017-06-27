@@ -12,7 +12,6 @@ import {
   app,
 } from './reducers.js'
 
-
 // Paths & Initial State
 
 const sagaMiddleware = createSagaMiddleware()

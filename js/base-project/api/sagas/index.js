@@ -1,4 +1,5 @@
 import runTimer from './timer.js'
+import websocket from './websocket.js'
 
 import {
   all,
@@ -7,5 +8,6 @@ import {
 export const rootSaga = function* () {
   yield all([
     runTimer(),
+    websocket(),
   ])
 }

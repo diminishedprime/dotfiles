@@ -10,7 +10,6 @@ const errorText = [...error, 'text']
 const errorSeverity = [...error, 'severity']
 
 const actionLog = ['actionLog']
-
 const replaying = ['replaying']
 
 // Paths
@@ -25,5 +24,4 @@ export const errorTextPath = R.lensPath(errorText)
 export const errorSeverityPath = R.lensPath(errorSeverity)
 
 export const actionLogPath = R.lensPath(actionLog)
-
 export const replayingPath = R.lensPath(replaying)

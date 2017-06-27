@@ -1,19 +1,3 @@
-export const START_TIMER = 'start timer'
-export const afStartTimer = () => ({
-  type: START_TIMER,
-})
-
-export const STOP_TIMER = 'start timer'
-export const afStopTimer = () => ({
-  type: STOP_TIMER,
-})
-
-export const TIMER_TICK = 'timer tick'
-export const afTimerTick = (seconds) => ({
-  type: TIMER_TICK,
-  seconds,
-})
-
 export const INCREMENT_HEARTBEATS = 'increment heartbeats'
 export const afIncrementHeartbeats = () => ({
   type: INCREMENT_HEARTBEATS,
@@ -42,31 +26,18 @@ export const afDismissError = () => ({
   type: DISMISS_ERROR,
 })
 
-export const ADD_TO_ACTION_LOG = 'add to action log'
-export const afAddToActionLog = (action) => ({
-  type: ADD_TO_ACTION_LOG,
-  action,
-  timestamp: new Date(),
-})
-
 export const CLEAR_ACTION_LOG = 'clear action log'
 export const afClearActionLog = () => ({
   type: CLEAR_ACTION_LOG,
 })
 
-export const RESET_STATE = 'reset state'
+// Async Actions
+const asyncConst = (value) => 'async ' + value
+
+export const RESET_STATE = asyncConst('reset state')
 export const afResetState = () => ({
   type: RESET_STATE,
 })
-
-export const REPLAYING = 'replaying'
-export const afReplaying = (flag) => ({
-  type: CLEAR_ACTION_LOG,
-  flag,
-})
-
-// Async Actions
-const asyncConst = (value) => 'async ' + value
 
 export const RETRIEVE_HI = asyncConst('retrieve hi')
 export const afRetrieveHi = () => ({
@@ -86,4 +57,18 @@ export const afAsyncIncrementCounter = () => ({
 export const REPLAY_ACTIONS = asyncConst('replay actions')
 export const afReplayActions = () => ({
   type: REPLAY_ACTIONS,
+})
+
+export const SET_REPLAYING = asyncConst('set replaying')
+export const afSetReplaying = (flag=true) => ({
+  type: SET_REPLAYING,
+  flag,
+})
+
+
+export const ADD_ACTION = asyncConst('add to action log')
+export const afAddAction = (action) => ({
+  type: ADD_ACTION,
+  action,
+  timestamp: new Date(),
 })
