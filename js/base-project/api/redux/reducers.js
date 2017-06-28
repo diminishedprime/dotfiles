@@ -1,24 +1,22 @@
 import R from 'ramda'
 
 import {
-  usersPath,
+  initialState,
+} from './initial-state.js'
+import {
+  userByUserIdP,
+  usersP,
 } from './paths.js'
 import {
   ADD_USER,
   REMOVE_USER,
 } from './actions.js'
 
-const initialState = {
-  users: [],
-}
+const addUser = (state, {userId, ws}) =>
+  R.set(userByUserIdP(userId), {userId, ws}, state)
 
-const addUser = (state, {ws}) => R.over(usersPath, R.append(ws), state)
-
-const removeUser = (state, {ws}) => {
-  const users = R.view(usersPath, state)
-  const idx = R.findIndex(R.equals(ws), users)
-  return R.over(usersPath, R.remove(idx, 1), state)
-}
+const removeUser = (state, {userId}) =>
+  R.over(usersP, R.dissoc(userId), state)
 
 export const app = (state=initialState, action) => {
   switch(action.type) {

@@ -10,3 +10,6 @@ echo "Copin over those files, my man"
 cp -R ~/programming/dotfiles/js/base-project/. .
 
 yarn install
+
+git add .
+git commit -am 'Initial commit'

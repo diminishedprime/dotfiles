@@ -6,8 +6,7 @@ import {
 
 import {
   rootSaga,
-} from '../sagas/index.js'
-
+} from './sagas/index.js'
 import {
   app,
 } from './reducers.js'
