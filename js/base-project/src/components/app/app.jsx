@@ -20,9 +20,12 @@ const App = ({hi, hasError, userId}) => (
     <div className="content">
       <div className="userId">UserId: {userId}</div>
       <Counter />
-      {hi.map((text, idx) => (
-         <div className="hi" key={idx}>{text}</div>
-       ))}
+      {
+        hi
+          .map((text, idx) => (
+            <div className="hi" key={idx}>{text}</div>
+          ))
+      }
     </div>
   </div>
 )

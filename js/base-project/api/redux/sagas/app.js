@@ -1,4 +1,6 @@
-import R from 'ramda'
+import {
+  eventChannel,
+} from 'redux-saga'
 
 import {
   afSetUserId,
@@ -16,6 +18,7 @@ import {
   put,
   all,
   takeEvery,
+  take,
 } from 'redux-saga/effects'
 
 const userDisconnected = function* () {
@@ -25,12 +28,26 @@ const userDisconnected = function* () {
   })
 }
 
+const beatHeart = function* (userId, heartbeatChan) {
+  yield take(heartbeatChan)
+  yield put(afBroadcastMessageToUserId(userId, 'heartbeat'))
+  yield beatHeart(userId, heartbeatChan)
+}
+
+const startHeartbeat = function* (userId) {
+  const heartbeatChan = eventChannel((emitter) => {
+    const iv = setInterval(() => emitter('beat'), 1000)
+    return () => clearInterval(iv)
+  })
+  yield beatHeart(userId, heartbeatChan)
+}
+
 const userConnected = function* () {
   yield takeEvery(USER_CONNECTED, function* ({userId, ws}) {
     yield put(afAddUser(userId, ws))
-    const setUserId = afSetUserId(userId)
-    yield put(afBroadcastActionToUserId(userId, setUserId))
+    yield put(afBroadcastActionToUserId(userId, afSetUserId(userId)))
     yield put(afBroadcastMessageToUserId(userId, 'Thanks for connecting via websockets'))
+    yield startHeartbeat(userId)
     /* TODO: any other logic for when a user connects to a websocket*/
   })
 }

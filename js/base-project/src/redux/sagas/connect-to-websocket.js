@@ -9,6 +9,7 @@ import {
 } from '../../constants.js'
 import {
   CONNECT_TO_WEBSOCKET,
+  afIncrementHeartbeats,
 } from '../actions.js'
 
 import {
@@ -19,18 +20,20 @@ import {
 } from 'redux-saga/effects'
 
 const onMessage = function* (messageChan) {
-  let message
-  while ((message = yield take(messageChan))) {
+  const message = yield take(messageChan)
+  if (message === 'heartbeat') {
+    yield put(afIncrementHeartbeats())
+  } else {
     // eslint-disable-next-line no-console
     console.log(message)
   }
+  yield onMessage(messageChan)
 }
 
 const onAction = function* (actionChan) {
-  let action
-  while ((action = yield take(actionChan))) {
-    yield put(action)
-  }
+  const action = yield take(actionChan)
+  yield put(action)
+  yield onAction(actionChan)
 }
 
 const connectToWebsocket = function* () {
