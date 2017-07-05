@@ -7,8 +7,7 @@ import io from 'socket.io-client'
 import {
   afIncrementHeartbeats,
   CONNECT_TO_WEBSOCKET,
-} from '../redux/actions.js'
-
+} from '../actions.js'
 
 import { takeLatest, take, put } from 'redux-saga/effects'
 

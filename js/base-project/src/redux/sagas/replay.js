@@ -8,10 +8,10 @@ import {
   afAddAction,
   afSetReplaying,
   afResetState,
-} from '../redux/actions.js'
+} from '../actions.js'
 import {
   actionLogPath,
-} from '../redux/paths.js'
+} from '../paths.js'
 
 import {
   all,

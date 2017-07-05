@@ -5,7 +5,7 @@ import {
 import {
   afIncrementCounter,
   ASYNC_INCREMENT_COUNTER,
-} from '../redux/actions.js'
+} from '../actions.js'
 
 import {
   actionChannel,
