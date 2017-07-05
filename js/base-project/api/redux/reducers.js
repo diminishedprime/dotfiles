@@ -4,8 +4,8 @@ import {
   initialState,
 } from './initial-state.js'
 import {
-  userByUserIdP,
-  usersP,
+  userByUserIdPath,
+  usersPath,
 } from './paths.js'
 import {
   ADD_USER,
@@ -13,10 +13,10 @@ import {
 } from './actions.js'
 
 const addUser = (state, {userId, ws}) =>
-  R.set(userByUserIdP(userId), {userId, ws}, state)
+  R.set(userByUserIdPath(userId), {userId, ws}, state)
 
 const removeUser = (state, {userId}) =>
-  R.over(usersP, R.dissoc(userId), state)
+  R.over(usersPath, R.dissoc(userId), state)
 
 export const app = (state=initialState, action) => {
   switch(action.type) {

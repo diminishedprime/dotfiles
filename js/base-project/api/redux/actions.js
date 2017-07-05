@@ -65,3 +65,16 @@ export const afConnectWebsocketServer = (httpServer) => ({
   type: CONNECT_WEBSOCKET_SERVER,
   httpServer,
 })
+
+export const USER_CONNECTED = asyncConst('user connected')
+export const afUserConnected = (userId, ws) => ({
+  type: USER_CONNECTED,
+  userId,
+  ws,
+})
+
+export const USER_DISCONNECTED = asyncConst('user disconnected')
+export const afUserDisconnected = (userId) => ({
+  type: USER_DISCONNECTED,
+  userId,
+})

@@ -9,7 +9,6 @@ import {
   afAsyncIncrementCounter,
   afRetrieveHi,
   afReplayActions,
-  afConnectToWebsocket,
 } from '../../redux/actions.js'
 import './counter.css'
 
@@ -21,7 +20,6 @@ const Counter = ({
   onClick2,
   replay,
   clearLog,
-  connectToWebsocket,
 }) => (
   <div className="counter">
     <div className="counterText">{counter}</div> clicks
@@ -31,7 +29,6 @@ const Counter = ({
       <button onClick={onClick2} className="button">request hi</button>
       <button onClick={replay} className="button">Replay</button>
       <button onClick={clearLog} className="button">Clear Log</button>
-      <button onClick={connectToWebsocket} className="button">WS Connect</button>
     </div>
     {
       (heartbeats > 0) &&
@@ -54,7 +51,6 @@ const mapDispatchToProps = (dispatch) => ({
   onClick2: () => dispatch(afRetrieveHi()),
   replay: () => dispatch(afReplayActions()),
   clearLog: () => dispatch(afClearActionLog()),
-  connectToWebsocket: () => dispatch(afConnectToWebsocket()),
 })
 
 export default connect(

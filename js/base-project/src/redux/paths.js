@@ -12,6 +12,8 @@ const errorSeverity = [...error, 'severity']
 const actionLog = ['actionLog']
 const replaying = ['replaying']
 
+const userIdA = ['userId']
+
 // Paths
 export const counterPath = R.lensPath(counter)
 
@@ -25,3 +27,4 @@ export const errorSeverityPath = R.lensPath(errorSeverity)
 
 export const actionLogPath = R.lensPath(actionLog)
 export const replayingPath = R.lensPath(replaying)
+export const userIdPath = R.lensPath(userIdA)
