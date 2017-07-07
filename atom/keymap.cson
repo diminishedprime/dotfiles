@@ -14,10 +14,15 @@
 'atom-workspace':
   'ctrl-g': 'core:cancel'
   'ctrl-p': 'core:move-up'
-  'ctrl-d': 'core:delete'
   'ctrl-n': 'core:move-down'
   'ctrl-b': 'core:move-left'
   'ctrl-f': 'core:move-right'
+  'ctrl-x ctrl-s': 'core:save'
+
+'atom-workspace atom-text-editor':
+  'alt-l': 'pane:show-next-item'
+  'alt-h': 'pane:show-previous-item'
+  'ctrl-d': 'core:delete'
 
 'atom-text-editor.vim-mode-plus.insert-mode':
   'ctrl-o': 'vim-mode-plus:insert-below-with-newline'
