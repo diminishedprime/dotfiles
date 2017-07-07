@@ -1,3 +1,4 @@
+import app from './app.js'
 import runTimer from './timer.js'
 import websocket from './websocket.js'
 
@@ -7,6 +8,7 @@ import {
 
 export const rootSaga = function* () {
   yield all([
+    app(),
     runTimer(),
     websocket(),
   ])

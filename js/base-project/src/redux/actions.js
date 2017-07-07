@@ -72,3 +72,9 @@ export const afAddAction = (action) => ({
   action,
   timestamp: new Date(),
 })
+
+export const SET_USER_ID = 'set user id'
+export const afSetUserId = (userId) => ({
+  type: SET_USER_ID,
+  userId,
+})

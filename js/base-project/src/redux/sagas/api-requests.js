@@ -4,7 +4,7 @@ import {
   afAppendHi,
   afError,
   RETRIEVE_HI,
-} from '../redux/actions.js'
+} from '../actions.js'
 
 import {
   put,

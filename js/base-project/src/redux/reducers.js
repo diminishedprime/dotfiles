@@ -6,6 +6,7 @@ import {
   initialActionLog,
 } from './initial-state.js'
 import {
+  userIdPath,
   replayingPath,
   counterPath,
   heartbeatsPath,
@@ -16,6 +17,7 @@ import {
   actionLogPath,
 } from './paths.js'
 import {
+  SET_USER_ID,
   SET_REPLAYING,
   RESET_STATE,
   CLEAR_ACTION_LOG,
@@ -55,8 +57,12 @@ const dismissErrorReducer = (state, _) =>
 const setReplaying = (state, {flag}) =>
   R.set(replayingPath, flag, state)
 
+const setUserId = (state, {userId}) =>
+  R.set(userIdPath, userId, state)
+
 export const app = (state=initialState, action) => {
   switch(action.type) {
+    case SET_USER_ID: return setUserId(state, action)
     case SET_REPLAYING: return setReplaying(state, action)
     case RESET_STATE:
       return initialState

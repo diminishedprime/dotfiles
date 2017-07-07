@@ -8,27 +8,25 @@ import {
   afAddAction,
   afSetReplaying,
   afResetState,
-} from '../redux/actions.js'
+} from '../actions.js'
 import {
   actionLogPath,
-} from '../redux/paths.js'
+} from '../paths.js'
 
 import {
   all,
   select,
   takeEvery,
-  take,
   put,
   fork,
 } from 'redux-saga/effects'
 
 const logActions = function* () {
-  let action
-  while ((action = yield take('*'))) {
+  const action = yield takeEvery('*', function* () {
     if (!action.type.startsWith('async')) {
       yield put(afAddAction({...action, timestamp: new Date().getTime()}))
     }
-  }
+  })
 }
 
 const delayReplay = function* (millis, action) {
