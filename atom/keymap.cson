@@ -27,4 +27,3 @@
 'atom-text-editor':
   'alt-,': 'last-cursor-position:previous'
   'alt-.': 'typescript:go-to-declaration'
-  'ctrl-g': ''
