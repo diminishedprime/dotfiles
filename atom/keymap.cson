@@ -1,12 +1,12 @@
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-
   'space w 2': 'pane:split-right-and-copy-active-item'
   'space w w': 'window:focus-next-pane'
   'space w d': 'tabs:close-tab'
 
+'atom-panel-container, atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'space f s': 'core:save'
   'space f f': 'advanced-open-file:toggle'
-  'space f T': 'tree-view:toggle'
+  'space f t': 'tree-view:toggle'
 
   'space space': 'command-palette:toggle'
 
