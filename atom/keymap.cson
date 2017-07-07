@@ -6,7 +6,7 @@
   'space f s': 'core:save'
   'space f f': 'fuzzy-finder:toggle-file-finder'
   'space space': 'command-palette:toggle'
-  'space b b': 'fuzzy-finder:toggle-bu'
+  'space b b': 'fuzzy-finder:toggle-buffer-finder'
 
 'atom-workspace':
   'ctrl-g': 'core:cancel'
