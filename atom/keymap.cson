@@ -1,0 +1,27 @@
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'space w 2': 'pane:split-right-and-copy-active-item'
+  'space w w': 'window:focus-next-pane'
+  'space w d': 'tabs:close-tab'
+
+  'space f s': 'core:save'
+  'space f f': 'fuzzy-finder:toggle-file-finder'
+  'space space': 'command-palette:toggle'
+  'space b b': 'fuzzy-finder:toggle-bu'
+
+'atom-workspace':
+  'ctrl-g': 'core:cancel'
+  'ctrl-p': 'core:move-up'
+  'ctrl-d': 'core:delete'
+  'ctrl-n': 'core:move-down'
+  'ctrl-b': 'core:move-left'
+  'ctrl-f': 'core:move-right'
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'ctrl-o': 'vim-mode-plus:insert-below-with-newline'
+  'ctrl-e': 'vim-mode-plus:move-to-last-character-of-line'
+  'ctrl-a': 'vim-mode-plus:move-to-first-character-of-line'
+
+'atom-text-editor':
+  'alt-,': 'last-cursor-position:previous'
+  'alt-.': 'typescript:go-to-declaration'
+  'ctrl-g': ''
