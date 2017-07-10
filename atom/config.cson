@@ -14,8 +14,12 @@
     fontFamily: "Source Code Pro"
     fontSize: 17
     scrollPastEnd: true
+    undoGroupingInterval: 150
   "exception-reporting":
     userId: "e3f91b10-a7cc-4173-a3b8-613139ae87c0"
   "linter-ui-default": {}
+  "vim-mode-plus":
+    automaticallyEscapeInsertModeOnActivePaneItemChange: true
+    groupChangesWhenLeavingInsertMode: false
   welcome:
     showOnStartup: false
