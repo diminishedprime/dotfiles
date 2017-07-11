@@ -143,22 +143,22 @@ projects = [ Project { projectName      = devWorkspace
                      , projectStartHook = Just $ do spawnOn devWorkspace "emacs"}
            , Project { projectName      = webWorkspace
                      , projectDirectory = "~/"
-                     , projectStartHook = Just $ do spawnOn webWorkspace "chromium-browser"}
+                     , projectStartHook = Just $ do spawnOn webWorkspace "google-chrome"}
            , Project { projectName      = devWebWorkspace
                      , projectDirectory = "~/"
-                     , projectStartHook = Just $ do spawnOn devWebWorkspace "chromium-browser"}
+                     , projectStartHook = Just $ do spawnOn devWebWorkspace "google-chrome"}
            , Project { projectName      = termWorkspace
                      , projectDirectory = "~/"
                      , projectStartHook = Just $ do spawnOn termWorkspace myTerminal}
            , Project { projectName      = chatWorkspace
                      , projectDirectory = "~/"
-                     , projectStartHook = Just $ do spawnOn chatWorkspace $ "chromium-browser  --new-window"
+                     , projectStartHook = Just $ do spawnOn chatWorkspace $ "google-chrome  --new-window"
                                                       ++ " https://www.messenger.com/ "
                                                       ++ " https://blono-fp-slackers.slack.com/messages/ "
                                                       ++ " https://hangouts.google.com/ "}
            , Project { projectName     = mailWorkSpace
                      , projectDirectory = "~/"
-                     , projectStartHook = Just $ do spawnOn mailWorkSpace $ "chromium-browser --new-window --app=\"https://inbox.google.com/\""}
+                     , projectStartHook = Just $ do spawnOn mailWorkSpace $ "google-chrome --new-window --app=\"https://inbox.google.com/\""}
            , Project { projectName     = perfWorkspace
                      , projectDirectory = "~/"
                      , projectStartHook = Just $ do spawnOn perfWorkspace $ "gnome-system-monitor"
@@ -273,10 +273,8 @@ spotifyCommand :: String
 spotifyCommand = "spotify"
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ (NS "plex" plexCommand (className =? "Google-chrome")
-                 (customFloating floatingVideoRR))
-              , (NS "spotify" spotifyCommand (className =? "Spotify")
-                 (customFloating spotifyVideoRR))]
+scratchpads = [ (NS "spotify" spotifyCommand (className =? "Spotify")
+                  (customFloating spotifyVideoRR))]
 
 
 moveVertical     x = keysMoveWindow   ( 0      , 16 * x )
