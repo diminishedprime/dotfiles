@@ -33,3 +33,11 @@ let g:EasyMotion_smartcase = 1
 " jk motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" CtrlP
+map <Leader>ff :CtrlP 
+let g:ctrlp_working_path_mode = ''
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules\|target\|\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|beam|class)$',
+  \ }

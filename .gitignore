@@ -2,3 +2,4 @@
 /.xmonad/autokey/autokey.pid
 /.xmonad/autokey/autokey.json~
 *.un~
+*.swp
