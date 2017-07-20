@@ -36,8 +36,30 @@ map <Leader>k <Plug>(easymotion-k)
 
 " CtrlP
 map <Leader>ff :CtrlP 
-let g:ctrlp_working_path_mode = ''
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules\|target\|\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll|beam|class)$',
   \ }
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+
+" some toggles I like
+map <Leader>tn :set number!<Return>
+map <Leader>sc :noh<Return>
+map <Leader>fed :edit ~/.vimrc<Return>
+map <Leader>fs :w<Return>
+map <Leader>w2 :vsplit<Return><C-W><C-W>
+map <Leader>wd :hide<Return>
+map <Leader>ww <C-W><C-W>
+nnoremap K <ESC>i<Return><ESC>
+
