@@ -83,3 +83,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls="ls -al"
 alias git='git --no-pager'
+
+source ~/.nix-profile/etc/profile.d/nix.sh
