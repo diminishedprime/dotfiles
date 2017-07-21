@@ -1,6 +1,6 @@
 nix-env -i neovim
 # Symlink as vim
-ln -sf $(which nvim) /usr/local/bin/vim
+sudo ln -sf $(which nvim) /usr/local/bin/vim
 
 ln -sf ~/programming/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
 

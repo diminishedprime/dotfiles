@@ -5,6 +5,7 @@ execute pathogen#infect()
 syntax enable
 set background=dark
 colorscheme solarized
+set termguicolors
 
 " Font
 set guifont=Source\ Code\ Pro:h16
