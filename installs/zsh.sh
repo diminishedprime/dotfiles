@@ -11,7 +11,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/ba
     exit 1
 }
 sudo sed -i '$ d' /usr/bin/zsh
-sudo rm /usr/bin/zsh
 
 ln -sf ~/programming/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/programming/dotfiles/zsh/.zshenv ~/.zshenv
