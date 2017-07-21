@@ -10,7 +10,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/ba
     echo "Could not install Oh My Zsh" >/dev/stderr
     exit 1
 }
-sudo sed -i '$ d' /usr/bin/zsh
+sudo sed -i '$ d' /etc/shells
 
 ln -sf ~/programming/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/programming/dotfiles/zsh/.zshenv ~/.zshenv
