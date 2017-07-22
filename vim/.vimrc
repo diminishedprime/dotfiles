@@ -60,10 +60,16 @@ map <Leader>fs :w<Return>
 map <Leader>w2 :vsplit<Return><C-W><C-W>
 map <Leader>wd :hide<Return>
 map <Leader>ww <C-W><C-W>
+" Move to other windows
 map <Leader>wh <C-W>h
 map <Leader>wl <C-W>l
 map <Leader>wj <C-W>j
 map <Leader>wk <C-W>k
+" Move other windows to far left, right, etc
+map <Leader>wH <C-W>H
+map <Leader>wL <C-W>L
+map <Leader>wJ <C-W>J
+map <Leader>wK <C-W>K
 
 map <Leader>gs :Gstatus<Return>
 
