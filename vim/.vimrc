@@ -59,6 +59,7 @@ map <Leader>fs :w<Return>
 
 " Quitting, etc
 map <Leader>qq :q<Return>
+map <Leader>qx :x<Return>
 map <Leader>qr :source ~/programming/dotfiles/vim/.vimrc<Return>
 
 map <Leader>w2 :vsplit<Return><C-W><C-W>
@@ -75,7 +76,7 @@ map <Leader>wL <C-W>L
 map <Leader>wJ <C-W>J
 map <Leader>wK <C-W>K
 
-map <Leader>gs :Gstatus<Return>
+map <Leader>gs :Gstatus\|only<Return>
 
 nnoremap K <ESC>i<Return><ESC>
 
