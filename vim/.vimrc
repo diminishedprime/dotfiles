@@ -79,3 +79,5 @@ map <Leader>gD <Leader>wd<Leader>wd
 
 nnoremap K <ESC>i<Return><ESC>
 
+cabbrev %s OverCommandLine<cr>%s
+cabbrev '<,'>s OverCommandLine<cr>'<,'>s
