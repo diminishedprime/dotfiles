@@ -58,12 +58,10 @@ map <Leader>sc :noh<Return>
 " File based operations
 map <Leader>fed :edit ~/.vimrc<Return>
 map <Leader>fs :w<Return>
-
 " Quitting, etc
 map <Leader>qq :q<Return>
 map <Leader>qx :x<Return>
 map <Leader>qr :source ~/programming/dotfiles/vim/.vimrc<Return>
-
 map <Leader>w2 :vsplit<Return><C-W><C-W>
 map <Leader>wd :hide<Return>
 map <Leader>ww <C-W><C-W>
@@ -77,8 +75,9 @@ map <Leader>wH <C-W>H
 map <Leader>wL <C-W>L
 map <Leader>wJ <C-W>J
 map <Leader>wK <C-W>K
-
+" Git related Things
 map <Leader>gs :Gstatus\|only<Return>
+map <Leader>gD <Leader>wd<Leader>wd
 
 nnoremap K <ESC>i<Return><ESC>
 
