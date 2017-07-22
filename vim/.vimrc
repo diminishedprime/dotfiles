@@ -5,6 +5,7 @@ execute pathogen#infect()
 syntax enable
 set background=dark
 colorscheme solarized
+let g:airline_theme='solarized'
 set termguicolors
 
 " Font
@@ -43,24 +44,28 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|beam|class)$',
   \ }
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+" Airline
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep = '|'
+let g:airline_right_alt_sep = '|'
+let g:airline#entensions#branch#empty_message = 'No VC'
 
 " some toggles I like
 map <Leader>tn :set number!<Return>
 map <Leader>sc :noh<Return>
 map <Leader>fed :edit ~/.vimrc<Return>
 map <Leader>fs :w<Return>
+
 map <Leader>w2 :vsplit<Return><C-W><C-W>
 map <Leader>wd :hide<Return>
 map <Leader>ww <C-W><C-W>
+map <Leader>wh <C-W>h
+map <Leader>wl <C-W>l
+map <Leader>wj <C-W>j
+map <Leader>wk <C-W>k
+
+map <Leader>gs :Gstatus<Return>
+
 nnoremap K <ESC>i<Return><ESC>
 
