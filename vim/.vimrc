@@ -22,6 +22,7 @@ set showcmd
 set incsearch
 set hlsearch
 set wildmenu
+set diffopt+=vertical
 
 filetype plugin indent on
 
