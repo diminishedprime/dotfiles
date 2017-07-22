@@ -57,6 +57,10 @@ map <Leader>sc :noh<Return>
 map <Leader>fed :edit ~/.vimrc<Return>
 map <Leader>fs :w<Return>
 
+" Quitting, etc
+map <Leader>qq :q<Return>
+map <Leader>qr :source ~/programming/dotfiles/vim/.vimrc<Return>
+
 map <Leader>w2 :vsplit<Return><C-W><C-W>
 map <Leader>wd :hide<Return>
 map <Leader>ww <C-W><C-W>
