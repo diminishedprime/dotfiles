@@ -1,3 +1,4 @@
+set nocompatible
 let mapleader = " "
 execute pathogen#infect()
 
@@ -10,10 +11,6 @@ set termguicolors
 
 " Font
 set guifont=Source\ Code\ Pro:h16
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 set undofile
 set ruler
@@ -36,9 +33,9 @@ let g:EasyMotion_smartcase = 1
 " jk motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+let g:EasyMotion_keys = 'uhetonas'
 
 " CtrlP
-map <Leader>ff :CtrlP 
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules\|target\|\v[\/]\.(git|hg|svn)$',
@@ -56,6 +53,7 @@ let g:airline#entensions#branch#empty_message = 'No VC'
 map <Leader>tn :set number!<Return>
 map <Leader>sc :noh<Return>
 " File based operations
+map <Leader>ff :CtrlP<Return>
 map <Leader>fed :edit ~/.vimrc<Return>
 map <Leader>fs :w<Return>
 " Quitting, etc
