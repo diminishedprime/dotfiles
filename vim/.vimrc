@@ -79,12 +79,15 @@ map <Leader>wL <C-W>L
 map <Leader>wJ <C-W>J
 map <Leader>wK <C-W>K
 " Git related Things
-map <Leader>gs :Gstatus\|only<Return>
+map <Leader>gs :Gstatus<Return>
+map <Leader>gc :Gcommit<Return>
 " Git hunk Things
+let g:gitgutter_map_keys = 0
 map <Leader>hs :GitGutterStageHunk<Return>
 map <Leader>hj :GitGutterNextHunk<Return>
 map <Leader>hk :GitGutterPrevHunk<Return>
 map <Leader>hx :GitGutterUndoHunk<Return>
+map <Leader>hp :GitGutterPreviewHunk<Return>
 
 nnoremap K <ESC>i<Return><ESC>
 
