@@ -84,4 +84,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls="ls -al"
 alias git='git --no-pager'
 
+# Ignore certain filetypes in autocomplete
+FIGNORE='.o:.beam'
+
 source ~/.nix-profile/etc/profile.d/nix.sh
