@@ -80,7 +80,6 @@ map <Leader>wJ <C-W>J
 map <Leader>wK <C-W>K
 " Git related Things
 map <Leader>gs :Gstatus\|only<Return>
-map <Leader>gD <Leader>wd<Leader>wd
 
 nnoremap K <ESC>i<Return><ESC>
 
