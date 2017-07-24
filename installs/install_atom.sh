@@ -2,7 +2,9 @@ apm install \
     advanced-open-file \
     vim-mode-plus \
     ex-mode \
-    hydrogen
+    hydrogen \
+    react \
+    linter-eslint
 
 ln -sf ~/programming/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 ln -sf ~/programming/dotfiles/atom/styles.less ~/.atom/styles.less
