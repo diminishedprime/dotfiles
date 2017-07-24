@@ -22,6 +22,11 @@ set wildmenu
 set diffopt+=vertical
 
 filetype plugin indent on
+set autoindent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
 " EasyMotion
 " Disable default mappings
