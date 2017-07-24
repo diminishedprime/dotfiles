@@ -80,6 +80,11 @@ map <Leader>wJ <C-W>J
 map <Leader>wK <C-W>K
 " Git related Things
 map <Leader>gs :Gstatus\|only<Return>
+" Git hunk Things
+map <Leader>hs :GitGutterStageHunk<Return>
+map <Leader>hj :GitGutterNextHunk<Return>
+map <Leader>hk :GitGutterPrevHunk<Return>
+map <Leader>hx :GitGutterUndoHunk<Return>
 
 nnoremap K <ESC>i<Return><ESC>
 
