@@ -19,6 +19,7 @@ git clone --depth=1 https://github.com/tpope/vim-surround.git ~/.config/nvim/bun
 git clone --depth=1 https://github.com/tpope/vim-repeat.git ~/.config/nvim/bundle/vim-repeat
 git clone --depth=1 https://github.com/vim-airline/vim-airline ~/.config/nvim/bundle/vim-airline
 git clone --depth=1 https://github.com/vim-airline/vim-airline-themes ~/.config/nvim/bundle/vim-airline-themes
+git clone --depth=1 https://github.com/osyo-manga/vim-over.git ~/.config/nvim/bundle/vim-over
 
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git ~/.config/nvim/bundle/vim-fugitive
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
