@@ -60,7 +60,7 @@ map <Leader>sc :noh<Return>
 " File based operations
 map <Leader>ff :CtrlP<Return>
 map <Leader>fed :edit ~/.vimrc<Return>
-map <Leader>fs :w<Return>
+map <Leader>fs :update<Return>
 " Quitting, etc
 map <Leader>qq :q<Return>
 map <Leader>qx :x<Return>
