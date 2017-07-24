@@ -61,6 +61,8 @@ map <Leader>sc :noh<Return>
 map <Leader>ff :CtrlP<Return>
 map <Leader>fed :edit ~/.vimrc<Return>
 map <Leader>fs :update<Return>
+" Buffer based operations
+map <Leader>bb :CtrlPBuffer<Return>
 " Quitting, etc
 map <Leader>qq :q<Return>
 map <Leader>qx :x<Return>
