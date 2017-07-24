@@ -65,6 +65,7 @@ map <Leader>fs :update<Return>
 map <Leader>qq :q<Return>
 map <Leader>qx :x<Return>
 map <Leader>qr :source ~/programming/dotfiles/vim/.vimrc<Return>
+" Window Stuff
 map <Leader>w2 :vsplit<Return><C-W><C-W>
 map <Leader>wd :hide<Return>
 map <Leader>ww <C-W><C-W>
