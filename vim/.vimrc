@@ -84,10 +84,10 @@ map <Leader>gc :Gcommit<Return>
 " Git hunk Things
 let g:gitgutter_map_keys = 0
 map <Leader>hs :GitGutterStageHunk<Return>
-map <Leader>hj :GitGutterNextHunk<Return>
-map <Leader>hk :GitGutterPrevHunk<Return>
 map <Leader>hx :GitGutterUndoHunk<Return>
 map <Leader>hp :GitGutterPreviewHunk<Return>
+map <Leader>hj :GitGutterNextHunk<Return>
+map <Leader>hk :GitGutterPrevHunk<Return>
 
 nnoremap K <ESC>i<Return><ESC>
 
