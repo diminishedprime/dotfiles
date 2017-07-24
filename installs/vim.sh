@@ -22,3 +22,4 @@ git clone --depth=1 https://github.com/vim-airline/vim-airline-themes ~/.config/
 
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git ~/.config/nvim/bundle/vim-fugitive
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
+git clone --depth=1 https://github.com/airblade/vim-gitgutter.git ~/.config/nvim/bundle/vim-gitgutter
