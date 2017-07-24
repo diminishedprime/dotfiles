@@ -81,6 +81,7 @@ map <Leader>wK <C-W>K
 " Git related Things
 map <Leader>gs :Gstatus<Return>
 map <Leader>gc :Gcommit<Return>
+map <Leader>gp :Gpush<Return>q
 " Git hunk Things
 let g:gitgutter_map_keys = 0
 map <Leader>hs :GitGutterStageHunk<Return>
