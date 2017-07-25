@@ -6,4 +6,5 @@ echo "Installing Development stuff"
 ~/programming/dotfiles/installs/zsh.sh
 ~/programming/dotfiles/installs/docker.sh
 ~/programming/dotfiles/installs/vim.sh
-~/programming/dotfiles/installs/emacs.sh
+~/programming/dotfiles/installs/tree.sh
+~/programming/dotfiles/installs/nodejs.sh
