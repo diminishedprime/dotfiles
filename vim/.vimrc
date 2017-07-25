@@ -82,6 +82,21 @@ map <Leader>wH <C-W>H
 map <Leader>wL <C-W>L
 map <Leader>wJ <C-W>J
 map <Leader>wK <C-W>K
+" Resize windows
+" Equalize Vertically
+map <Leader>wr= <C-W><C-=>
+" Down
+map <Leader>wrj <C-W>+<SID>ws
+nn <script> <SID>wsj <C-W>+<SID>ws
+" Up
+map <Leader>wrk <C-W>-<SID>ws
+nn <script> <SID>wsk <C-W>-<SID>ws
+" Left
+map <Leader>wrh :vertical resize +5<RETURN><SID>ws
+nn <script> <SID>wsh :vertical resize +5<Return><SID>ws
+" Right
+map <Leader>wrl :vertical resize -5<Return><SID>ws
+nn <script> <SID>wsl :vertical resize -5<Return><SID>ws
 " Git related Things
 map <Leader>gs :Gstatus<Return>
 map <Leader>gc :Gcommit<Return>
