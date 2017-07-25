@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls="ls -al"
 alias git='git --no-pager'
+alias tree="tree -I 'node_modules'"
 
 # Ignore certain filetypes in autocomplete
 FIGNORE='.o:.beam'
