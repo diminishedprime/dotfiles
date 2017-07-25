@@ -44,7 +44,6 @@ function! ToggleTerminal()
       call termopen("zsh", {"detach": 0})
       let g:term_buf = bufnr("")
     endtry
-    startinsert!
   endif
 endfunction
 
