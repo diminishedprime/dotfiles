@@ -90,9 +90,13 @@ map <Leader>qq :q<Return>
 map <Leader>qx :x<Return>
 map <Leader>qr :source ~/programming/dotfiles/vim/.vimrc<Return>
 " Window Stuff
-map <Leader>w2 :vsplit<Return><C-W><C-W>
+map <Leader>w2 :vsplit<Return><Leader>wl
+map <Leader>w3 :vsplit<Return>:vsplit<Return><Leader>wr=
+map <Leader>w\ :vsplit<Return><Leader>wl
+map <Leader>w- :split<Return><Leader>wj
 map <Leader>wd :hide<Return>
 map <Leader>ww <C-W><C-W>
+map <Leader>wm :only<Return>
 " Move to other windows
 map <Leader>wh <C-W>h
 map <Leader>wl <C-W>l
