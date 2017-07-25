@@ -57,7 +57,7 @@ let g:airline#entensions#branch#empty_message = 'No VC'
 " some toggles I like
 map <Leader>tn :set number!<Return>
 map <Leader>tr :set relativenumber!<Return>
-map <Leader>sc :noh<Return>
+map <Leader>sc :nohlsearch<Return>
 " File based operations
 map <Leader>ff :CtrlP<Return>
 map <Leader>fed :edit ~/.vimrc<Return>
