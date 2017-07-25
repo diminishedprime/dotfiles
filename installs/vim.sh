@@ -1,6 +1,7 @@
+#!/usr/bin
+
+echo "Installing nvim"
 nix-env -i neovim
-# Symlink as vim
-sudo ln -sf $(which nvim) /usr/local/bin/vim
 
 ln -sf ~/programming/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
 
