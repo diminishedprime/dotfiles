@@ -1,11 +1,5 @@
-export const initialActionLog = []
-export const initialErrorState = {}
+import R from 'ramda'
 
-export const initialState = {
-  counter: 0,
-  heartbeats: 0,
-  hi: [],
-  error: initialErrorState,
-  actionLog: initialActionLog,
-  replaying: false,
-}
+export const initialState = R.compose(
+  R.identity
+)({})
