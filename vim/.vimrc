@@ -28,6 +28,26 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Neovim Terminal Stuff
+:tnoremap <ESC> <C-\><C-n>
+let g:term_buf = 0
+function! ToggleTerminal()
+  1wincmd w
+ qif g:term_buf == bufnr("")
+    setlocal bufhidden=hide
+    close
+  else
+    topleft vnew
+    try
+      exec "buffer ".g:term_buf
+    catch
+      call termopen("zsh", {"detach": 0})
+      let g:term_buf = bufnr("")
+    endtry
+    startinsert!
+  endif
+endfunction
+
 " EasyMotion
 " Disable default mappings
 let g:EasyMotion_do_mapping = 0
@@ -55,6 +75,7 @@ let g:airline_right_alt_sep = '|'
 let g:airline#entensions#branch#empty_message = 'No VC'
 
 " some toggles I like
+map <Leader>tt :call ToggleTerminal()<Return>
 map <Leader>tn :set number!<Return>
 map <Leader>tr :set relativenumber!<Return>
 map <Leader>sc :nohlsearch<Return>
