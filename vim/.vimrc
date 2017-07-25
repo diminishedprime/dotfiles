@@ -33,7 +33,7 @@ set expandtab
 let g:term_buf = 0
 function! ToggleTerminal()
   1wincmd w
- qif g:term_buf == bufnr("")
+ if g:term_buf == bufnr("")
     setlocal bufhidden=hide
     close
   else
