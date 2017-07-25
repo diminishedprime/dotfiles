@@ -1,3 +1,4 @@
 #!/bin/bash
+
 echo "Installing Tree"
-nix-env -iA nixos.tree
+nix-env -i tree

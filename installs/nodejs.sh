@@ -1,2 +1,4 @@
 #!/bin/bash
-nix-env -i nodejs-8.1.4
+
+echo "Installing Nodejs"
+nix-env -i nodejs-7.10.1
