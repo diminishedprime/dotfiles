@@ -87,4 +87,6 @@ alias git='git --no-pager'
 # Ignore certain filetypes in autocomplete
 FIGNORE='.o:.beam'
 
+export EDITOR='vim'
+
 source ~/.nix-profile/etc/profile.d/nix.sh
