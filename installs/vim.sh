@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/bin/bash
 
 echo "Installing nvim"
 nix-env -i neovim

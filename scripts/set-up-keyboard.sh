@@ -7,5 +7,3 @@ setxkbmap -option 'ctrl:nocaps'
 xset r rate 200 40
 
 ~/programming/dotfiles/scripts/set_up_hyper_modifiers.sh
-
-autokey &
