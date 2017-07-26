@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set keyboard to dvorak
+setxkbmap -layout dvorak
+
 # Remap caps lock to left control.
 setxkbmap -option 'ctrl:nocaps'
 
