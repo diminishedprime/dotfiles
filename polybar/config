@@ -2,16 +2,16 @@
 enable-ipc = true
 wm-name = polybar-top
 monitor = eDP-1
-bottom = true
+bottom = false
 override-redirect = false
 width = 100%
-height = 3.0%
+height = 2%
 foreground = #002b36
 locale = en_US.UTF-8
-font-0 = Source Code Pro:size=30;5
-font-1 = FontAwesome:size=33:weight=Regular;7
+font-0 = Source Code Pro:size=25;4
+font-1 = FontAwesome:size=23:weight=Regular;5
 modules-left = powermenu
-modules-right = wireless-network battery volume clock backlight
+modules-right = wireless-network battery my-volume clock backlight
 
 [module/backlight]
 type = custom/ipc
@@ -29,6 +29,23 @@ scroll-up = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
 scroll-down = echo hook:module/backlight2 > /tmp/polybar_mqueue.%pid%
 click-left = echo hook:module/backlight3 > /tmp/polybar_mqueue.%pid%
 click-right = echo hook:module/backlight4 > /tmp/polybar_mqueue.%pid%
+
+[module/my-volume]
+type = custom/ipc
+format-forground = #111111
+format-background = #dc322f
+format = "<output> "
+initial = 1
+hook-0 = amixer -D pulse get Master 1+ | egrep -q 'off' && echo "  " || echo "  "$(amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\]//g')
+
+hook-1 = amixer -q set Master 1%+ & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
+scroll-up = echo hook:module/my-volume2 > /tmp/polybar_mqueue.%pid%
+
+hook-2 = amixer -q set Master 1%- & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
+scroll-down = echo hook:module/my-volume3 > /tmp/polybar_mqueue.%pid%
+
+click-left = echo hook:module/my-volume4 > /tmp/polybar_mqueue.%pid%
+hook-3 = amixer -qD pulse set Master 1+ toggle & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
 
 ;base03	#002b36
 ;base02	#073642
@@ -53,16 +70,6 @@ date = "%d %b %H:%M"
 label = "  %date% "
 format = <label>
 format-background = #b58900
-
-; TODO: Still need to actually make volume work, maybe take the same approach as how I did the backlight. 
-[module/volume]
-type = internal/volume
-format-volume-padding = 0
-format-muted-padding = 0
-label-volume = "  %percentage% "
-label-volume-background = #cb4b16
-label-muted = "  "
-label-muted-background = #cb4b16
 
 [module/battery]
 type = internal/battery
@@ -96,18 +103,12 @@ label-empty = %name%
 [module/powermenu]
 type = custom/menu
 format-padding = 2
-format-background = #000
+format-background = #2aa198
 label-open = 
 label-close = 
-label-separator = " - "
-menu-0-0 = Terminate WM
-menu-0-0-exec = bspc quit -1
-menu-0-1 = Reboot
-menu-0-1-exec = sudo reboot
-menu-0-2 = Power off
-menu-0-2-exec = sudo poweroff
-menu-0-3 = Suspend
-menu-0-3-exec = sudo systemctl suspend
+menu-0-0 = "  Files "
+menu-0-0-background = #fff
+menu-0-0-exec = sudo shutdown -r now
 
 [module/wireless-network]
 type = internal/network

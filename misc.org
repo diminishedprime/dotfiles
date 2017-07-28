@@ -1,11 +1,11 @@
-* Spmaster
-
-3. add in a sound effect when they submit a word
-5. everything lower-case automatically when typing a hint.
-6. Add a timer.
-7. Make it where the word-buttons things don't change your cursor.
-
 * Misc
+** Improve Dotfiles
+    + Logout button
+    + Shutdown button
+    + Restart Button
+    + Wifi disconnected string formatting
+    + scaling issue with chrome, think it's probably the xorgconfthingy
+    + see if I can make application launcher look prettier.
 
 ** xps 9360 backlight issue?
    I haven't figured out exactly what the cause of it was, but it seems like
