@@ -6,25 +6,19 @@ bottom = true
 override-redirect = false
 width = 100%
 height = 3%
-background = #FDF6E3
-foreground = #657B83
-spacing = 0
-line-size = 0
+foreground = #002b36
 locale = en_US.UTF-8
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
-font-0 = sans:size=30;0
+font-0 = Source Code Pro:size=28;0
 font-1 = FontAwesome:size=21:weight=Regular;0
 modules-left = powermenu
-modules-right = wireless-network battery volume backlight clock thing leftbacklight backlight
+modules-right = wireless-network battery volume clock backlight
 
-[module/leftbacklight]
-type = custom/text
-content = ☀
 [module/backlight]
 type = custom/ipc
+format-forground = #111111
+format-background = #dc322f
+format-padding = 1
+format = <output>
 hook-0 = light -A 1% && light | rev | cut -c 4- | rev
 hook-1 = light -U 1% && light | rev | cut -c 4- | rev
 hook-2 = light | rev | cut -c 4- | rev
@@ -32,18 +26,38 @@ initial = 3
 scroll-up = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
 scroll-down = echo hook:module/backlight2 > /tmp/polybar_mqueue.%pid%
 click-left = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
-format-padding = 1
+
+;base03	#002b36
+;base02	#073642
+;base01	#586e75
+;base00	#657b83
+;base0	#839496
+;base1	#93a1a1
+;base2	#eee8d5
+;base3	#fdf6e3
+;yellow	#b58900
+;orange	#cb4b16
+;red	#dc322f
+;magenta	#d33682
+;violet	#6c71c4
+;blue	#268bd2
+;cyan	#2aa198
+;green	#859900
 
 [module/clock]
 type = internal/date
-date = %d %b %H:%M
-format-padding = 1
+date = "%d %b %H:%M"
+label = " %date% "
+format = <label>
+label-background = #b58900
+format-prefix-background = #b58900
 
 [module/volume]
 type = internal/volume
 format-volume-padding = 0
 format-muted-padding = 0
-label-volume =  %percentage%
+label-volume = "  %percentage% "
+label-volume-background = #cb4b16
 label-muted = 
 
 [module/battery]
@@ -51,23 +65,23 @@ type = internal/battery
 time-format = %H:%M
 battery = BAT0
 adapter = ACAD
-format-charging = "<animation-charging> <label-charging> "
+format-charging = " <animation-charging> <label-charging> "
 label-charging = %time%
 label-discharging = "%time%"
 label-full = " "
-format-discharging = "<ramp-capacity> <label-discharging> "
-label-padding = 5
+format-discharging = " <ramp-capacity> <label-discharging> "
+format-discharging-background = #d33682
 
-ramp-capacity-0 = "♥♡♡♡♡♡♡♡♡♡"
-ramp-capacity-1 = "♥♥♡♡♡♡♡♡♡♡"
-ramp-capacity-2 = "♥♥♥♡♡♡♡♡♡♡"
-ramp-capacity-3 = "♥♥♥♥♡♡♡♡♡♡"
-ramp-capacity-4 = "♥♥♥♥♥♡♡♡♡♡"
-ramp-capacity-5 = "♥♥♥♥♥♥♡♡♡♡"
-ramp-capacity-6 = "♥♥♥♥♥♥♥♡♡♡"
-ramp-capacity-7 = "♥♥♥♥♥♥♥♥♡♡"
-ramp-capacity-8 = "♥♥♥♥♥♥♥♥♥♡"
-ramp-capacity-9 = "♥♥♥♥♥♥♥♥♥♥"
+ramp-capacity-0 = " ♥♡♡♡♡♡♡♡♡♡"
+ramp-capacity-1 = " ♥♥♡♡♡♡♡♡♡♡"
+ramp-capacity-2 = " ♥♥♥♡♡♡♡♡♡♡"
+ramp-capacity-3 = " ♥♥♥♥♡♡♡♡♡♡"
+ramp-capacity-4 = " ♥♥♥♥♥♡♡♡♡♡"
+ramp-capacity-5 = " ♥♥♥♥♥♥♡♡♡♡"
+ramp-capacity-6 = " ♥♥♥♥♥♥♥♡♡♡"
+ramp-capacity-7 = " ♥♥♥♥♥♥♥♥♡♡"
+ramp-capacity-8 = " ♥♥♥♥♥♥♥♥♥♡"
+ramp-capacity-9 = " ♥♥♥♥♥♥♥♥♥♥"
 
 bar-capacity-width = 10
 
@@ -82,43 +96,27 @@ animation-charging-7 = "♥♥♥♥♥♥♥♥♡♡"
 animation-charging-8 = "♥♥♥♥♥♥♥♥♥♡"
 animation-charging-9 = "♥♥♥♥♥♥♥♥♥♥"
 animation-charging-framerate = 500
-
 label-focused = %name%
 label-focused-background = #DC322F
-label-focused-foreground = #FFF
-label-focused-padding = 2
-
 label-dimmed-focused = %name%
-
 label-occupied = %name%
 label-occupied-underline = #DC322F
-label-occupied-padding = 2
-
 label-empty = %name%
-label-empty-padding = 2
 
 [module/powermenu]
 type = custom/menu
-
 format-padding = 2
 format-background = #000
-format-foreground = #fff
-
 label-open = 
 label-close = 
 label-separator = " - "
-
 menu-0-0 = Terminate WM
-menu-0-0-foreground = #fff
 menu-0-0-exec = bspc quit -1
 menu-0-1 = Reboot
-menu-0-1-foreground = #fff
 menu-0-1-exec = sudo reboot
 menu-0-2 = Power off
-menu-0-2-foreground = #fff
 menu-0-2-exec = sudo poweroff
 menu-0-3 = Suspend
-menu-0-3-foreground = #fff
 menu-0-3-exec = sudo systemctl suspend
 
 [module/wireless-network]
@@ -126,9 +124,7 @@ type = internal/network
 interface = wlp58s0
 interval = 2.0
 ping-interval = 10
-
-format-connected = <label-connected>
+format-connected = " <label-connected> "
+format-connected-background = #6c71c4
 label-connected = "  %essid% (%local_ip%)"
 label-disconnected =  not connected
-
-; vim:ft=dosini
