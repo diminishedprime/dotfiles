@@ -35,8 +35,8 @@ format-padding = 0
 
 [module/clock]
 type = internal/date
-date =  %a, %d %b %H:%M
-format-padding = 0
+date = %d %b %H:%M
+format-padding = 1
 
 [module/volume]
 type = internal/volume
