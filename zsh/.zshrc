@@ -87,6 +87,7 @@ alias tree="tree -I 'node_modules'"
 alias vi="nvim"
 alias vim="nvim"
 alias gs="git status"
+alias dotfiles="cd ~/programming/dotfiles"
 
 # Ignore certain filetypes in autocomplete
 FIGNORE='.o:.beam'
