@@ -28,7 +28,7 @@ locale = en_US.UTF-8
 font-0 = Source Code Pro:size=25;4
 font-1 = FontAwesome:size=23:weight=Regular;5
 modules-left = powermenu
-modules-right = wireless-network battery my-volume clock my-backlight
+modules-right = wireless-network battery my-volume my-clock my-backlight
 
 [module/my-backlight]
 type = custom/ipc
@@ -53,7 +53,6 @@ click-right = echo hook:module/my-backlight5 > /tmp/polybar_mqueue.%pid%
 
 [module/my-volume]
 type = custom/ipc
-format-forground = #111111
 format-background = #dc322f
 format = "<output> "
 initial = 1
@@ -68,12 +67,17 @@ scroll-down = echo hook:module/my-volume3 > /tmp/polybar_mqueue.%pid%
 click-left = echo hook:module/my-volume4 > /tmp/polybar_mqueue.%pid%
 hook-3 = amixer -qD pulse set Master 1+ toggle & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
 
-[module/clock]
-type = internal/date
-date = "%d %b %H:%M"
-label = "  %date% "
-format = <label>
+[module/my-clock]
+type = custom/ipc
 format-background = #b58900
+format = "<output> "
+initial = 1
+
+hook-0 = echo " " $(date +"%H:%M")
+click-left = echo hook:module/my-clock1 > /tmp/polybar_mqueue.%pid%
+
+hook-1 = echo " " $(date +"%d %b")
+click-right = echo hook:module/my-clock2 > /tmp/polybar_mqueue.%pid%
 
 [module/battery]
 type = internal/battery
@@ -83,19 +87,19 @@ format-charging = " <animation-charging> "
 format-discharging = " <ramp-capacity> "
 format-discharging-background = #d33682
 
-ramp-capacity-0 = " ♡♡♡"
-ramp-capacity-1 = " ♡♡"
-ramp-capacity-2 = " ♡"
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 
 bar-capacity-width = 10
 
-animation-charging-0 = "♡♡♡"
-animation-charging-1 = "♡♡"
-animation-charging-2 = "♡"
-animation-charging-3 = ""
-animation-charging-4 = ""
+animation-charging-0 = " ""
+animation-charging-1 = " ""
+animation-charging-2 = " ""
+animation-charging-3 = " ""
+animation-charging-4 = " ""
 animation-charging-framerate = 500
 label-focused = %name%
 label-focused-background = #DC322F
