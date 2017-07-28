@@ -58,7 +58,8 @@ format-volume-padding = 0
 format-muted-padding = 0
 label-volume = "  %percentage% "
 label-volume-background = #cb4b16
-label-muted = 
+label-muted = "  "
+label-muted-background = #cb4b16
 
 [module/battery]
 type = internal/battery
