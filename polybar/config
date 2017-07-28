@@ -1,8 +1,25 @@
+; Solarized Colors
+;base03	#002b36
+;base02	#073642
+;base01	#586e75
+;base00	#657b83
+;base0	#839496
+;base1	#93a1a1
+;base2	#eee8d5
+;base3	#fdf6e3
+;yellow	#b58900
+;orange	#cb4b16
+;red	#dc322f
+;magenta	#d33682
+;violet	#6c71c4
+;blue	#268bd2
+;cyan	#2aa198
+;green	#859900
+
 [bar/top]
 enable-ipc = true
 wm-name = polybar-top
 monitor = eDP-1
-bottom = false
 override-redirect = false
 width = 100%
 height = 2%
@@ -11,24 +28,28 @@ locale = en_US.UTF-8
 font-0 = Source Code Pro:size=25;4
 font-1 = FontAwesome:size=23:weight=Regular;5
 modules-left = powermenu
-modules-right = wireless-network battery my-volume clock backlight
+modules-right = wireless-network battery my-volume clock my-backlight
 
-[module/backlight]
+[module/my-backlight]
 type = custom/ipc
 format-forground = #111111
 format-background = #dc322f
 format-padding = 1
 format =  <output>
-hook-0 = light -A 1% && light | rev | cut -c 4- | rev
-hook-1 = light -U 1% && light | rev | cut -c 4- | rev
-hook-2 = light -A 10% && light | rev | cut -c 4- | rev
-hook-3 = light -U 10% && light | rev | cut -c 4- | rev
-hook-4 = light | rev | cut -c 4- | rev
-initial = 3
-scroll-up = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
-scroll-down = echo hook:module/backlight2 > /tmp/polybar_mqueue.%pid%
-click-left = echo hook:module/backlight3 > /tmp/polybar_mqueue.%pid%
-click-right = echo hook:module/backlight4 > /tmp/polybar_mqueue.%pid%
+initial = 1
+hook-0 = light | rev | cut -c 4- | rev
+
+hook-1 = light -A 1% & echo hook:module/my-backlight1 > /tmp/polybar_mqueue.%pid%
+scroll-up = echo hook:module/my-backlight2 > /tmp/polybar_mqueue.%pid%
+
+hook-2 = light -U 1% & echo hook:module/my-backlight1 > /tmp/polybar_mqueue.%pid%
+scroll-down = echo hook:module/my-backlight3 > /tmp/polybar_mqueue.%pid%
+
+hook-3 = light -A 10% & echo hook:module/my-backlight1 > /tmp/polybar_mqueue.%pid%
+click-left = echo hook:module/my-backlight4 > /tmp/polybar_mqueue.%pid%
+
+hook-4 = light -U 10% & echo hook:module/my-backlight1 > /tmp/polybar_mqueue.%pid%
+click-right = echo hook:module/my-backlight5 > /tmp/polybar_mqueue.%pid%
 
 [module/my-volume]
 type = custom/ipc
@@ -46,23 +67,6 @@ scroll-down = echo hook:module/my-volume3 > /tmp/polybar_mqueue.%pid%
 
 click-left = echo hook:module/my-volume4 > /tmp/polybar_mqueue.%pid%
 hook-3 = amixer -qD pulse set Master 1+ toggle & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
-
-;base03	#002b36
-;base02	#073642
-;base01	#586e75
-;base00	#657b83
-;base0	#839496
-;base1	#93a1a1
-;base2	#eee8d5
-;base3	#fdf6e3
-;yellow	#b58900
-;orange	#cb4b16
-;red	#dc322f
-;magenta	#d33682
-;violet	#6c71c4
-;blue	#268bd2
-;cyan	#2aa198
-;green	#859900
 
 [module/clock]
 type = internal/date
