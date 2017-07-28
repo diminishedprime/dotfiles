@@ -53,10 +53,10 @@ click-right = echo hook:module/my-backlight5 > /tmp/polybar_mqueue.%pid%
 
 [module/my-volume]
 type = custom/ipc
-format-background = #dc322f
+format-background = #859900
 format = "<output> "
 initial = 1
-hook-0 = amixer -D pulse get Master 1+ | egrep -q 'off' && echo "  " || echo "  "$(amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\]//g')
+hook-0 = amixer -D pulse get Master 1+ | egrep -q 'off' && echo " " || echo "  "$(amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\]//g')
 
 hook-1 = amixer -q set Master 1%+ & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
 scroll-up = echo hook:module/my-volume2 > /tmp/polybar_mqueue.%pid%
@@ -85,7 +85,8 @@ battery = BAT0
 adapter = ACAD
 format-charging = " <animation-charging> "
 format-discharging = " <ramp-capacity> "
-format-discharging-background = #d33682
+format-charging-background = #cb4b16
+format-discharging-background = #cb4b16
 
 ramp-capacity-0 = " "
 ramp-capacity-1 = " "
@@ -93,20 +94,12 @@ ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 
-bar-capacity-width = 10
-
-animation-charging-0 = " ""
-animation-charging-1 = " ""
-animation-charging-2 = " ""
-animation-charging-3 = " ""
-animation-charging-4 = " ""
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+animation-charging-4 = " "
 animation-charging-framerate = 500
-label-focused = %name%
-label-focused-background = #DC322F
-label-dimmed-focused = %name%
-label-occupied = %name%
-label-occupied-underline = #DC322F
-label-empty = %name%
 
 [module/powermenu]
 type = custom/menu
