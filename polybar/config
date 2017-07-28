@@ -21,11 +21,14 @@ format-padding = 1
 format =  <output>
 hook-0 = light -A 1% && light | rev | cut -c 4- | rev
 hook-1 = light -U 1% && light | rev | cut -c 4- | rev
-hook-2 = light | rev | cut -c 4- | rev
+hook-2 = light -A 10% && light | rev | cut -c 4- | rev
+hook-3 = light -U 10% && light | rev | cut -c 4- | rev
+hook-4 = light | rev | cut -c 4- | rev
 initial = 3
 scroll-up = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
 scroll-down = echo hook:module/backlight2 > /tmp/polybar_mqueue.%pid%
-click-left = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
+click-left = echo hook:module/backlight3 > /tmp/polybar_mqueue.%pid%
+click-right = echo hook:module/backlight4 > /tmp/polybar_mqueue.%pid%
 
 ;base03	#002b36
 ;base02	#073642
@@ -51,11 +54,12 @@ label = "  %date% "
 format = <label>
 format-background = #b58900
 
+; TODO: Still need to actually make volume work, maybe take the same approach as how I did the backlight. 
 [module/volume]
 type = internal/volume
 format-volume-padding = 0
 format-muted-padding = 0
-label-volume = "  %percentage% "
+label-volume = "  %percentage% "
 label-volume-background = #cb4b16
 label-muted = "  "
 label-muted-background = #cb4b16
