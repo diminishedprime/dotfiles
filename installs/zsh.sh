@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Installing zsh"
 nix-env -i zsh-5.3.1
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Installing Patched Powerline Fonts"
 mkdir -p ~/temp/fonts
 git clone --depth=1 https://github.com/powerline/fonts.git ~/temp/fonts
 cd ~/temp/fonts
