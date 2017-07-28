@@ -1,37 +1,38 @@
 [bar/top]
+enable-ipc = true
 wm-name = polybar-top
 monitor = eDP-1
 bottom = true
 override-redirect = false
-
 width = 100%
 height = 3%
-
 background = #FDF6E3
 foreground = #657B83
-
 spacing = 0
 line-size = 0
-
-;separator = |
-
 locale = en_US.UTF-8
-
 padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-
 font-0 = sans:size=30;0
 font-1 = FontAwesome:size=21:weight=Regular;0
-
 modules-left = powermenu
-modules-right = wireless-network battery volume cpu backlight clock
+modules-right = wireless-network battery volume backlight clock thing leftbacklight backlight
 
-[module/cpu]
-type = internal/cpu
-label =  %percentage%
-format-padding = 0
+[module/leftbacklight]
+type = custom/text
+content = ☀
+[module/backlight]
+type = custom/ipc
+hook-0 = light -A 1% && light | rev | cut -c 4- | rev
+hook-1 = light -U 1% && light | rev | cut -c 4- | rev
+hook-2 = light | rev | cut -c 4- | rev
+initial = 3
+scroll-up = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
+scroll-down = echo hook:module/backlight2 > /tmp/polybar_mqueue.%pid%
+click-left = echo hook:module/backlight1 > /tmp/polybar_mqueue.%pid%
+format-padding = 1
 
 [module/clock]
 type = internal/date
@@ -44,17 +45,6 @@ format-volume-padding = 0
 format-muted-padding = 0
 label-volume =  %percentage%
 label-muted = 
-
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-format =  <bar>
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
-format-padding = 1
-enable-scroll = true
 
 [module/battery]
 type = internal/battery
