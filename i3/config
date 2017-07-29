@@ -112,6 +112,19 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 
+set $bg-color 	         #073642
+set $inactive-bg-color   #073642
+set $text-color          #cb4b16
+set $inactive-text-color #586e75
+set $urgent-bg-color     #b58900
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
