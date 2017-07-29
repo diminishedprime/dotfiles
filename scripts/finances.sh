@@ -1,3 +1,5 @@
+#!/bin/bash
+
 google-chrome  --new-window \
                https://app.youneedabudget.com/de6157f9-8283-4381-9482-c6f593a11efb/budget \
                https://accountaccess.myfedloan.org/authentication/ \
