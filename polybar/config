@@ -27,7 +27,7 @@ foreground = #002b36
 locale = en_US.UTF-8
 font-0 = Source Code Pro:size=25;4
 font-1 = FontAwesome:size=23:weight=Regular;5
-modules-left = powermenu
+modules-left = i3
 modules-right = wireless-network battery my-volume my-clock my-backlight
 
 [module/my-backlight]
@@ -101,16 +101,6 @@ animation-charging-3 = " "
 animation-charging-4 = " "
 animation-charging-framerate = 500
 
-[module/powermenu]
-type = custom/menu
-format-padding = 2
-format-background = #2aa198
-label-open = 
-label-close = 
-menu-0-0 = "  Files "
-menu-0-0-background = #fff
-menu-0-0-exec = sudo shutdown -r now
-
 [module/wireless-network]
 type = internal/network
 interface = wlp58s0
@@ -120,3 +110,44 @@ format-connected = <label-connected>
 format-connected-background = #6c71c4
 label-connected = "  %signal%% %local_ip% "
 label-disconnected =  not connected
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = #657b83
+
+label-focused = %name%:%icon%
+label-focused-background = #002b36
+label-focused-foreground = #cb4b16
+label-focused-padding = 1
+
+label-unfocused = %name%:%icon%
+label-unfocused-padding = 1
+label-unfocused-foreground = #2aa198
+label-unfocused-background = #073642
+
+label-urgent = %name%!
+label-urgent-background = #073642
+
+label-visible = %name%
+label-visible-background = #586e75
+label-visible-underline = #d33682
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
