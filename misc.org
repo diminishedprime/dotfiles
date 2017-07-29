@@ -4,7 +4,6 @@
     + Shutdown button
     + Restart Button
     + Wifi disconnected string formatting
-    + scaling issue with chrome, think it's probably the xorgconfthingy
     + see if I can make application launcher look prettier.
 
 ** xps 9360 backlight issue?
