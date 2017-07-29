@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:monospace 26
+font pango:System San Francisco Display 20
 
 # Set workspaces to go to a specific monitor
 set $monL DP1-1
@@ -20,15 +20,15 @@ workspace 10 output $monR
 # reload the configuration file
 bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+p restart
+bindsym $mod+q restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-msg exit"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
-bindsym $mod+Shift+c kill
+bindsym $mod+BackSpace kill
 # start rofi (a program launcher)
 bindsym $mod+space exec rofi -show run
 bindsym $mod+w exec rofi -show window
