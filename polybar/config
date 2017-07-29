@@ -68,16 +68,12 @@ click-left = echo hook:module/my-volume4 > /tmp/polybar_mqueue.%pid%
 hook-3 = amixer -qD pulse set Master 1+ toggle & echo hook:module/my-volume1 > /tmp/polybar_mqueue.%pid%
 
 [module/my-clock]
-type = custom/ipc
+type = internal/date
+interval = 60.0
+label = " %time% "
 format-background = #b58900
-format = "<output> "
-initial = 1
-
-hook-0 = echo " " $(date +"%H:%M")
-click-left = echo hook:module/my-clock1 > /tmp/polybar_mqueue.%pid%
-
-hook-1 = echo " " $(date +"%d %b")
-click-right = echo hook:module/my-clock2 > /tmp/polybar_mqueue.%pid%
+time =  %H:%M
+time-alt =  %d %b
 
 [module/battery]
 type = internal/battery
