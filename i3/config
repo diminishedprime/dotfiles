@@ -19,6 +19,8 @@ workspace 10 output $monR
 # Shortcuts
 # reload the configuration file
 bindsym $mod+Shift+r reload
+# lock i3
+bindsym $mod+Shift+BackSpace exec i3lock --color 073642
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+q restart
 # exit i3 (logs you out of your X session)

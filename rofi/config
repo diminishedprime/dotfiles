@@ -2,12 +2,13 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #002b37, #002b37, #002b37
-rofi.color-normal: #002b37, #839496, #002b37, #002b37, #cb4b16
-rofi.color-active: #002b37, #839496, #002b37, #002b37, #008ed4
-rofi.color-urgent: #002b37, #839496, #002b37, #002b37, #da4281
+rofi.color-window: argb:d1002b37, argb:0002b37, argb:0002b37
+rofi.color-normal: argb:0002b37, #839496, argb:0002b37, argb:0002b37, #cb4b16
+rofi.color-active: argb:0002b37, #839496, argb:0002b37, argb:0002b37, #008ed4
+rofi.color-urgent: argb:0002b37, #839496, argb:0002b37, argb:0002b37, argb:a2da4281
 rofi.width: 100
 rofi.lines: 5
+rofi.opacity: 50
 rofi.padding: 800
 rofi.dpi: 270
-rofi.font: System San Francisco Display 15
+rofi.font: SFNS Display 15
