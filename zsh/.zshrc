@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls="ls -al"
+alias ls="ls -alh"
 alias git='git --no-pager'
 alias tree="tree -I 'node_modules'"
 alias vi="nvim"
@@ -95,3 +95,9 @@ FIGNORE='.o:.beam'
 export EDITOR='vim'
 
 source ~/.nix-profile/etc/profile.d/nix.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/matt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/matt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/matt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/matt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

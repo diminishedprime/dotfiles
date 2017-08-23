@@ -28,6 +28,17 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+augroup autocmds
+  autocmd!
+
+  autocmd BufNewFile,BufRead .babelrc set filetype=javascript
+
+  " Spell check for text files
+  autocmd BufNewFile,BufRead *.txt,*.md setlocal spell
+  autocmd Filetype gitcommit setlocal spell
+
+augroup END
+
 " Neovim Terminal Stuff
 :tnoremap <ESC> <C-\><C-n>
 let g:term_buf = 0
@@ -72,6 +83,25 @@ let g:airline_right_sep = ''
 let g:airline_left_alt_sep = '|'
 let g:airline_right_alt_sep = '|'
 let g:airline#entensions#branch#empty_message = 'No VC'
+
+" Autopairs
+let g:AutoPairsFlyMode = 1
+
+" Match Tag Always
+let g:mta_filetypes = {
+  \ 'html': 1,
+  \ 'xhtml': 1,
+  \ 'xml': 1,
+  \ 'javascript.jsx': 1,
+  \}
+
+" CloseTag
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.jsx,*.md'
+
+" Scheme Stuff
+" For whatever reason, this will make it where run* indents 2 spaces instead
+" of a whole bunch. 
+set lispwords+=run*,run,fresh
 
 " some toggles I like
 map <Leader>tt :call ToggleTerminal()<Return>
