@@ -116,6 +116,7 @@ set wildmenu
 set diffopt+=vertical
 set modelines=1
 nnoremap K <ESC>i<Return><ESC>
+vnoremap C !column -t -o" "<cr>
 cabbrev %s OverCommandLine<cr>%s
 cabbrev '<,'>s OverCommandLine<cr>'<,'>s
 function! <SID>StripTrailingWhitespaces()
