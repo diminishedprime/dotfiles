@@ -4,22 +4,22 @@ let mapleader = " "
 execute pathogen#infect()
 " }}}
 " Solarized Colors {{{
-let  base03   =  '#002b36'
-let  base02   =  '#073642'
-let  base01   =  '#586e75'             
-let  base00   =  '#657b83'
-let  base0    =  '#839496'
-let  base1    =  '#93a1a1'
-let  base2    =  '#eee8d5'
-let  base3    =  '#fdf6e3'
-let  yellow   =  '#b58900'
-let  orange   =  '#cb4b16'
-let  red      =  '#dc322f'
-let  magenta  =  '#d33682'
-let  violet   =  '#6c71c4'
-let  blue     =  '#268bd2'
-let  cyan     =  '#2aa198'
-let  green    =  '#859900'
+let base03  = '#002b36'
+let base02  = '#073642'
+let base01  = '#586e75'
+let base00  = '#657b83'
+let base0   = '#839496'
+let base1   = '#93a1a1'
+let base2   = '#eee8d5'
+let base3   = '#fdf6e3'
+let yellow  = '#b58900'
+let orange  = '#cb4b16'
+let red     = '#dc322f'
+let magenta = '#d33682'
+let violet  = '#6c71c4'
+let blue    = '#268bd2'
+let cyan    = '#2aa198'
+let green   = '#859900'
 " }}}
 " Colors & Fonts {{{
 syntax enable
@@ -35,6 +35,7 @@ exe 'autocmd InsertLeave * highlight CursorLine guibg=' . base01
 set guifont=Source\ Code\ Pro:h16
 " }}}
 " Folding {{{
+nnoremap <Tab> za
 set foldenable
 set foldlevelstart=10
 set foldmethod=syntax
@@ -58,11 +59,22 @@ set softtabstop=2
 set expandtab
 " }}}
 " Autocommands {{{
-augroup autocmds
+augroup misc
+  " Clears all the autocommands for the augroup
   autocmd!
+
+  autocmd BufWritePre *.js,*.txt,*.md
+        \:call <SID>StripTrailingWhitespaces()
+
+  " .babelrc is a javascript file
   autocmd BufNewFile,BufRead .babelrc set filetype=javascript
+
+  " enable spellchecking on txt and markdown
   autocmd BufNewFile,BufRead *.txt,*.md setlocal spell
+
+  " enable spellchecking on a gitcommit
   autocmd Filetype gitcommit setlocal spell
+
 augroup END
 " }}}
 " Backup & Undo {{{
@@ -106,6 +118,15 @@ set modelines=1
 nnoremap K <ESC>i<Return><ESC>
 cabbrev %s OverCommandLine<cr>%s
 cabbrev '<,'>s OverCommandLine<cr>'<,'>s
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
 " }}}
 
 " Plugins
@@ -151,9 +172,15 @@ let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.jsx,*.md'
 
 " Language Specific
 " Scheme {{{
-" For whatever reason, this will make it where run* indents 2 spaces instead
-" of a whole bunch. 
-set lispwords+=run*,run,fresh
+augroup Scheme
+  " Clears all the autocommands for the augroup
+  autocmd!
+
+  " For whatever reason, this will make it where run* indents 2 spaces instead
+  " of a whole bunch. 
+  autocmd BufNewFile,BufRead *.scm setlocal lispwords+=run*,run,fresh
+
+augroup END
 " }}}
 
 " Spacemacs Style Bindings
