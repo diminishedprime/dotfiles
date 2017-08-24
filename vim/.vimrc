@@ -2,10 +2,29 @@ set nocompatible
 let mapleader = " "
 execute pathogen#infect()
 
+"  solarized colors
+let  base03   =  '#002b36'
+let  base02   =  '#073642'
+let  base01   =  '#586e75'             
+let  base00   =  '#657b83'
+let  base0    =  '#839496'
+let  base1    =  '#93a1a1'
+let  base2    =  '#eee8d5'
+let  base3    =  '#fdf6e3'
+let  yellow   =  '#b58900'
+let  orange   =  '#cb4b16'
+let  red      =  '#dc322f'
+let  magenta  =  '#d33682'
+let  violet   =  '#6c71c4'
+let  blue     =  '#268bd2'
+let  cyan     =  '#2aa198'
+let  green    =  '#859900'
+
 " Pretty Colors
 syntax enable
 set background=dark
 colorscheme solarized
+exe 'highlight Visual guibg=' . base3
 let g:airline_theme='solarized'
 set termguicolors
 
@@ -13,6 +32,11 @@ set termguicolors
 set guifont=Source\ Code\ Pro:h16
 
 set undofile
+set cursorline
+exe 'highlight CursorLine guibg=' . base01
+exe 'autocmd InsertEnter * highlight CursorLine guibg=' . base02
+exe 'autocmd InsertLeave * highlight CursorLine guibg=' . base01
+
 set ruler
 set number
 set showcmd
@@ -28,6 +52,19 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Folding
+set foldenable
+set foldlevelstart=10
+set foldmethod=syntax
+set foldtext=MyFoldText()
+exe 'highlight Folded guifg=' . base0
+exe 'highlight Folded guibg=' . base3
+function! MyFoldText()
+  let line = getline(v:foldstart)
+  let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+  return v:folddashes . sub
+endfunction
+
 augroup autocmds
   autocmd!
 
@@ -38,6 +75,12 @@ augroup autocmds
   autocmd Filetype gitcommit setlocal spell
 
 augroup END
+
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 
 " Neovim Terminal Stuff
 :tnoremap <ESC> <C-\><C-n>
@@ -58,6 +101,9 @@ function! ToggleTerminal()
   endif
 endfunction
 
+" Gundo
+nnoremap <leader>u :GundoToggle<CR>
+
 " EasyMotion
 " Disable default mappings
 let g:EasyMotion_do_mapping = 0
@@ -70,12 +116,11 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 let g:EasyMotion_keys = 'uhetonas'
 
-" CtrlP
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules\|target\|\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|beam|class)$',
-  \ }
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Airline
 let g:airline_left_sep = ''
