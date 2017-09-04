@@ -106,6 +106,7 @@ format-connected = <label-connected>
 format-connected-background = #6c71c4
 label-connected = "  %signal%% %local_ip% "
 label-disconnected =  not connected
+format-disconnected-background = #dc322f
 
 
 [module/i3]

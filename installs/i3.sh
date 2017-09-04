@@ -7,6 +7,7 @@ ln -sf ~/programming/dotfiles/i3/config ~/.config/i3/config
 ~/programming/dotfiles/installs/polybar.sh
 ~/programming/dotfiles/installs/rofi.sh
 ~/programming/dotfiles/installs/fonts.sh
+nix-env -i xcwd
 
 # Symlink gtk settings
 nix-env -i flat-plat-gtk-theme-20170605

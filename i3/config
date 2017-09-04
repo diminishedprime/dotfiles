@@ -1,4 +1,5 @@
 set $mod Mod4
+set $meta Mod1
 font pango:System San Francisco Display 20
 
 # Set workspaces to go to a specific monitor
@@ -29,6 +30,7 @@ bindsym $mod+Shift+q exec "i3-msg exit"
 floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+$meta+Return exec gnome-terminal --working-directory=$(xcwd)
 # kill focused window
 bindsym $mod+BackSpace kill
 # start rofi (a program launcher)

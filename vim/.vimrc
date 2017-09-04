@@ -63,8 +63,7 @@ augroup misc
   " Clears all the autocommands for the augroup
   autocmd!
 
-  autocmd BufWritePre *.js,*.txt,*.md
-        \:call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.js,*.txt,*.md :call <SID>StripTrailingWhitespaces()
 
   " .babelrc is a javascript file
   autocmd BufNewFile,BufRead .babelrc set filetype=javascript
