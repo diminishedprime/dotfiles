@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing zsh"
-nix-env -i zsh-5.3.1
+nix-env -i zsh
 
 # Add simlink to /usr/bin/zsh for oh-my-zsh-installation to not freak out
 sudo ln -sf $(which zsh) /usr/bin/zsh

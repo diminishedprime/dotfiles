@@ -19,3 +19,6 @@ cd ~/temp/fonts
 ./install.sh
 cd -
 rm -rf ~/temp/fonts
+
+echo "Installing Font Awesome"
+sudo apt install fonts-font-awesome

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Installing i3"
+mkdir -p ~/.config/i3/
 ln -sf ~/programming/dotfiles/i3/config ~/.config/i3/config
 
 ~/programming/dotfiles/installs/xcape.sh
