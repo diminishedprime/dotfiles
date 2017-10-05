@@ -31,6 +31,9 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (go :variables go-tab-width 2)
+     rust
+     markdown
      csv
      octave
      ;;;; Frontend
@@ -320,6 +323,9 @@ you should place your code here."
   (global-aggressive-indent-mode 1)
   (display-time-mode 1)
   (global-flycheck-mode 1)
+
+  ;; Rust stuff
+  (setq rust-format-on-save 't)
 
   ;; Set up shortcut to go to org home
   (defun mjh-go-to-org-home ()
