@@ -21,7 +21,7 @@ workspace 10 output $monR
 # reload the configuration file
 bindsym $mod+Shift+r reload
 # lock i3
-bindsym $mod+Shift+BackSpace exec i3lock --color 073642
+bindsym $mod+Shift+BackSpace exec ~/programming/dotfiles/scripts/fuzzy-lock.sh
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+q restart
 # exit i3 (logs you out of your X session)
@@ -138,6 +138,7 @@ hide_edge_borders both
 #        tray_output primary
 #}
 
-exec ~/programming/dotfiles/scripts/set-up-keyboard.sh
+exec xautolock -time 5 -corners 00+0 -cornerdelay 1 -cornerredelay 10 -locker '~/programming/dotfiles/scripts/fuzzy-lock.sh' &
 exec ~/programming/dotfiles/scripts/set-up-touchpad.sh
+exec ~/programming/dotfiles/scripts/set-up-keyboard.sh
 exec ~/programming/dotfiles/scripts/launch-polybar.sh

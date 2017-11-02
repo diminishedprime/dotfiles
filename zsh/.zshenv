@@ -8,3 +8,5 @@ export PATH=/usr/local/Cellar/:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
 export PATH="/home/matt/anaconda3/bin:$PATH"
+
+export PATH="/home/matt/go/bin:$PATH"
