@@ -90,8 +90,16 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+0 workspace 10
 bindsym $mod+Shift+0 move container to workspace 10
 
+set $tempMode hello :: there :: son
+bindsym $mod+x mode "$tempMode"
+mode "$tempMode" {
+  bindsym Escape mode "default"
+}
+
 # resize window (you can also use the mouse for that)
-mode "resize" {
+set $resizeMode Resize :: h - smaller horizontal :: j - bigger horizontal :: k - smaller vertial :: l - bigger vertical
+bindsym $mod+p mode "$resizeMode"
+mode "$resizeMode" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -114,9 +122,8 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+p mode "resize"
 
-set $bg-color 	         #073642
+set $bg-color            #073642
 set $inactive-bg-color   #073642
 set $text-color          #cb4b16
 set $inactive-text-color #586e75
@@ -138,7 +145,9 @@ hide_edge_borders both
 #        tray_output primary
 #}
 
-exec xautolock -time 5 -corners 00+0 -cornerdelay 1 -cornerredelay 10 -locker '~/programming/dotfiles/scripts/fuzzy-lock.sh' &
+for_window [title="i3-pretty-mode-title"] floating enable
+
+exec ~/programming/dotfiles/i3/i3-pretty-mode/i3-pretty-mode.sh
 exec ~/programming/dotfiles/scripts/set-up-touchpad.sh
 exec ~/programming/dotfiles/scripts/set-up-keyboard.sh
 exec ~/programming/dotfiles/scripts/launch-polybar.sh
