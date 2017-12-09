@@ -35,6 +35,7 @@ def show_window(label_list):
     if (regex.match(label_list[0]) != None):
         return
     root = Tkinter.Tk()
+    root.attributes("-type", "dock")
     width = int(float(args.get("--min_width", "500")))
     root.minsize(width=width, height=1)
     labelText = reduce(lambda acc, s: acc + '\n' + s, label_list[1:])
